@@ -73,19 +73,24 @@ body {
       @media screen and (min-width: 1400px) {
         #home #hero .h3 {
           font-size: 4.2rem; } }
-    #home #hero form#contact label {
-      font-family: 'Graphie-Bold', sans-serif;
-      color: #666666;
-      font-size: 1.4rem; }
-      @media screen and (min-width: 1200px) {
-        #home #hero form#contact label {
-          font-size: 1.8rem; } }
-    #home #hero form#contact button {
-      font-family: 'Graphie-Bold', sans-serif;
-      font-size: 2.2rem; }
+    #home #hero form#contact {
+      text-align: center; }
       @media screen and (min-width: 992px) {
-        #home #hero form#contact button {
-          font-size: 2.6rem; } }
+        #home #hero form#contact .input_wrap {
+          text-align: center; } }
+      #home #hero form#contact label {
+        font-family: 'Graphie-Bold', sans-serif;
+        color: #666666;
+        font-size: 1.4rem; }
+        @media screen and (min-width: 1200px) {
+          #home #hero form#contact label {
+            font-size: 1.8rem; } }
+      #home #hero form#contact button {
+        font-family: 'Graphie-Bold', sans-serif;
+        font-size: 2.2rem; }
+        @media screen and (min-width: 992px) {
+          #home #hero form#contact button {
+            font-size: 2.6rem; } }
   #home #section_01 {
     padding: 7rem 0; }
     #home #section_01 #case_01 .h1 span {
@@ -110,9 +115,31 @@ body {
         @media screen and (min-width: 992px) {
           #home #section_01 #case_01 #description .copy {
             font-size: 2rem; } }
+    #home #section_01 #brands #highlight {
+      padding: 5rem 7rem; }
+      #home #section_01 #brands #highlight .h1 {
+        color: #000;
+        font-size: 3.4rem;
+        text-align: center; }
+        @media screen and (min-width: 992px) {
+          #home #section_01 #brands #highlight .h1 {
+            font-size: 3.6rem; } }
+        @media screen and (min-width: 1200px) {
+          #home #section_01 #brands #highlight .h1 {
+            font-size: 4.4rem; } }
+        @media screen and (min-width: 1400px) {
+          #home #section_01 #brands #highlight .h1 {
+            font-size: 5.2rem; } }
+      #home #section_01 #brands #highlight #display {
+        margin-top: 5rem; }
+        #home #section_01 #brands #highlight #display .item {
+          padding: 1rem 3rem; }
 
 .--red {
   color: #E41408; }
+
+.--bkg_noise {
+  background: url("../img/bkg_noise.png") repeat; }
 
 .--bkg_red {
   background-color: #E41408; }
