@@ -25,13 +25,20 @@ body {
   font-family: 'Graphie-ExtraBold', sans-serif;
   color: white; }
 
+.navbar .navbar-brand {
+  width: 125px; }
+  @media (min-width: 1200px) {
+    .navbar .navbar-brand {
+      width: 152.67px; } }
+
+footer {
+  padding: 2rem 0; }
+  footer p {
+    display: inline-block;
+    font-size: 2.2rem; }
+
 #home {
   padding: 0; }
-  #home .navbar .navbar-brand {
-    width: 125px; }
-    @media (min-width: 1200px) {
-      #home .navbar .navbar-brand {
-        width: 152.67px; } }
   #home #hero {
     padding: 7rem 0; }
     #home #hero .h1 {
@@ -66,13 +73,17 @@ body {
           #home #hero .h2 span {
             font-size: 3.2rem; } }
     #home #hero .h3 {
-      font-size: 3.2rem; }
+      font-size: 3.2rem;
+      text-align: center; }
       @media screen and (min-width: 1200px) {
         #home #hero .h3 {
           font-size: 3.6rem; } }
       @media screen and (min-width: 1400px) {
         #home #hero .h3 {
           font-size: 4.2rem; } }
+      #home #hero .h3::before {
+        content: '';
+        background-color: #F8A30E; }
     #home #hero form#contact {
       text-align: center; }
       @media screen and (min-width: 992px) {

@@ -21,14 +21,21 @@ body
 .h1, .h2, .h3, .h4, .h5, .h6
 	font-family: 'Graphie-ExtraBold', sans-serif
 	color: white
+.navbar
+	.navbar-brand
+		width: 125px
+		@media (min-width:$xl)
+			width: 152.67px
+
+footer
+	padding: 2rem 0
+	p
+		display: inline-block
+		font-size: 2.2rem
 
 #home
 	padding: 0
-	.navbar
-		.navbar-brand
-			width: 125px
-			@media (min-width:$xl)
-				width: 152.67px
+	
 	#hero
 		padding: 7rem 0
 		.h1
@@ -56,10 +63,15 @@ body
 					font-size: 3.2rem
 		.h3
 			font-size: 3.2rem
+			text-align: center
 			@media screen and ( min-width: $xl )
 				font-size: 3.6rem
 			@media screen and ( min-width: $xxl )
 				font-size: 4.2rem
+			&::before
+				content: ''
+				background-color: $yellow
+
 		form#contact
 			text-align: center
 			.input_wrap
@@ -116,7 +128,3 @@ body
 					margin-top: 5rem
 					.item
 						padding: 1rem 3rem
-					
-					
-
-
