@@ -40,10 +40,10 @@ body {
   font-family: 'Graphie-ExtraBold', sans-serif;
   color: white; }
 
-.navbar .navbar-brand {
+header .navbar .navbar-brand {
   width: 125px; }
   @media (min-width: 1200px) {
-    .navbar .navbar-brand {
+    header .navbar .navbar-brand {
       width: 152.67px; } }
 
 footer {
@@ -88,7 +88,11 @@ footer {
         @media screen and (min-width: 1400px) {
           #home #hero .h2 span {
             font-size: 3.2rem; } }
+      #home #hero .h2 .capsule {
+        display: inline-block;
+        text-align: center; }
     #home #hero .h3 {
+      position: relative;
       font-size: 3.2rem;
       text-align: center; }
       @media screen and (min-width: 1200px) {
@@ -106,12 +110,11 @@ footer {
       left: 50%;
       top: -50%;
       position: absolute;
-      transform: translate(-50%, 50%);
+      transform: translate(-50%, 0%);
       z-index: -1; }
     #home #hero #contact {
       position: relative; }
       #home #hero #contact .z-index {
-        position: absolute;
         z-index: 0; }
       #home #hero #contact form {
         text-align: center; }
@@ -125,6 +128,9 @@ footer {
           @media screen and (min-width: 1200px) {
             #home #hero #contact form label {
               font-size: 1.8rem; } }
+        #home #hero #contact form input,
+        #home #hero #contact form textarea {
+          font-size: 1.5rem; }
         #home #hero #contact form button {
           font-family: 'Graphie-Bold', sans-serif;
           font-size: 2.2rem;
@@ -156,6 +162,9 @@ footer {
         @media screen and (min-width: 992px) {
           #home #section_01 #case_01 #description .copy {
             font-size: 2rem; } }
+        #home #section_01 #case_01 #description .copy .badge {
+          margin-left: 1rem;
+          font-size: 1.1rem; }
     #home #section_01 #brands #highlight {
       padding: 5rem 7rem; }
       #home #section_01 #brands #highlight .h1 {
