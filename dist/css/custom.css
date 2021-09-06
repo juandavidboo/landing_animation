@@ -44,7 +44,7 @@ body {
       @media screen and (min-width: 1200px) {
         #home #hero .h1 {
           font-size: 7.5rem; } }
-      @media screen and (min-width: 1600px) {
+      @media screen and (min-width: 1400px) {
         #home #hero .h1 {
           font-size: 8.75rem; } }
     #home #hero .h2 {
@@ -55,6 +55,30 @@ body {
       @media screen and (min-width: 1200px) {
         #home #hero .h2 {
           font-size: 4.4rem; } }
-      @media screen and (min-width: 1600px) {
+      @media screen and (min-width: 1400px) {
         #home #hero .h2 {
           font-size: 5.2rem; } }
+      #home #hero .h2 span {
+        display: block;
+        font-size: 2.5rem; }
+        @media screen and (min-width: 1200px) {
+          #home #hero .h2 span {
+            font-size: 2.75rem; } }
+        @media screen and (min-width: 1400px) {
+          #home #hero .h2 span {
+            font-size: 3.2rem; } }
+    #home #hero .h3 {
+      font-size: 3.2rem; }
+      @media screen and (min-width: 1200px) {
+        #home #hero .h3 {
+          font-size: 3.6rem; } }
+      @media screen and (min-width: 1400px) {
+        #home #hero .h3 {
+          font-size: 4.2rem; } }
+    #home #hero form#contact label {
+      font-family: 'Graphie-Bold', sans-serif;
+      color: #666666;
+      font-size: 1.4rem; }
+      @media screen and (min-width: 1200px) {
+        #home #hero form#contact label {
+          font-size: 1.8rem; } }
