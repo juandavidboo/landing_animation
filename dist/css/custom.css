@@ -1,3 +1,18 @@
+.--red {
+  color: #E41408; }
+
+.--bkg_noise {
+  background: url("../img/bkg_noise.png") repeat; }
+
+.--bkg_red {
+  background-color: #E41408; }
+
+.--bkg_pink {
+  background-color: #FFEAE3; }
+
+.--bkg_violet {
+  background: linear-gradient(to right, #521E48, #0B004D); }
+
 @font-face {
   font-family: "Graphie-Regular";
   src: url("../fonts/Graphie-Regular.otf") format("opentype"); }
@@ -35,7 +50,8 @@ footer {
   padding: 2rem 0; }
   footer p {
     display: inline-block;
-    font-size: 2.2rem; }
+    font-size: 2.2rem;
+    margin: 0; }
 
 #home {
   padding: 0; }
@@ -81,27 +97,41 @@ footer {
       @media screen and (min-width: 1400px) {
         #home #hero .h3 {
           font-size: 4.2rem; } }
-      #home #hero .h3::before {
-        content: '';
-        background-color: #F8A30E; }
-    #home #hero form#contact {
-      text-align: center; }
-      @media screen and (min-width: 992px) {
-        #home #hero form#contact .input_wrap {
-          text-align: center; } }
-      #home #hero form#contact label {
-        font-family: 'Graphie-Bold', sans-serif;
-        color: #666666;
-        font-size: 1.4rem; }
-        @media screen and (min-width: 1200px) {
-          #home #hero form#contact label {
-            font-size: 1.8rem; } }
-      #home #hero form#contact button {
-        font-family: 'Graphie-Bold', sans-serif;
-        font-size: 2.2rem; }
+    #home #hero .circle_bkg::before {
+      content: '';
+      background-color: #F8A30E;
+      height: 20vw;
+      width: 20vw;
+      border-radius: 50%;
+      left: 50%;
+      top: -50%;
+      position: absolute;
+      transform: translate(-50%, 50%);
+      z-index: -1; }
+    #home #hero #contact {
+      position: relative; }
+      #home #hero #contact .z-index {
+        position: absolute;
+        z-index: 0; }
+      #home #hero #contact form {
+        text-align: center; }
         @media screen and (min-width: 992px) {
-          #home #hero form#contact button {
-            font-size: 2.6rem; } }
+          #home #hero #contact form .input_wrap {
+            text-align: center; } }
+        #home #hero #contact form label {
+          font-family: 'Graphie-Bold', sans-serif;
+          color: #333333;
+          font-size: 1.4rem; }
+          @media screen and (min-width: 1200px) {
+            #home #hero #contact form label {
+              font-size: 1.8rem; } }
+        #home #hero #contact form button {
+          font-family: 'Graphie-Bold', sans-serif;
+          font-size: 2.2rem;
+          text-transform: lowercase; }
+          @media screen and (min-width: 992px) {
+            #home #hero #contact form button {
+              font-size: 2.6rem; } }
   #home #section_01 {
     padding: 7rem 0; }
     #home #section_01 #case_01 .h1 span {
@@ -145,18 +175,3 @@ footer {
         margin-top: 5rem; }
         #home #section_01 #brands #highlight #display .item {
           padding: 1rem 3rem; }
-
-.--red {
-  color: #E41408; }
-
-.--bkg_noise {
-  background: url("../img/bkg_noise.png") repeat; }
-
-.--bkg_red {
-  background-color: #E41408; }
-
-.--bkg_pink {
-  background-color: #FFEAE3; }
-
-.--bkg_violet {
-  background: linear-gradient(to right, #521E48, #0B004D); }

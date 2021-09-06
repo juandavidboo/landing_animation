@@ -1,15 +1,15 @@
 @font-face 
-    font-family: "Graphie-Regular"
-    src: url("../fonts/Graphie-Regular.otf") format('opentype')
+	font-family: "Graphie-Regular"
+	src: url("../fonts/Graphie-Regular.otf") format('opentype')
 @font-face 
-    font-family: "Graphie-SemiBold"
-    src: url("../fonts/Graphie-SemiBold.otf") format('opentype')
+	font-family: "Graphie-SemiBold"
+	src: url("../fonts/Graphie-SemiBold.otf") format('opentype')
 @font-face 
-    font-family: "Graphie-Bold"
-    src: url("../fonts/Graphie-Bold.otf") format('opentype')
+	font-family: "Graphie-Bold"
+	src: url("../fonts/Graphie-Bold.otf") format('opentype')
 @font-face 
-    font-family: "Graphie-ExtraBold"
-    src: url("../fonts/Graphie-ExtraBold.otf") format('opentype')
+	font-family: "Graphie-ExtraBold"
+	src: url("../fonts/Graphie-ExtraBold.otf") format('opentype')
 
 html
 	font-size: 62.5%
@@ -32,6 +32,7 @@ footer
 	p
 		display: inline-block
 		font-size: 2.2rem
+		margin: 0
 
 #home
 	padding: 0
@@ -68,27 +69,42 @@ footer
 				font-size: 3.6rem
 			@media screen and ( min-width: $xxl )
 				font-size: 4.2rem
-			&::before
-				content: ''
-				background-color: $yellow
+		.circle_bkg::before
+			content: ''
+			background-color: $yellow
+			height: 20vw
+			width: 20vw
+			border-radius: 50%
+			left: 50%
+			top: -50%
+			position: absolute
+			transform: translate(-50%, 50%)
+			z-index: -1
 
-		form#contact
-			text-align: center
-			.input_wrap
-				@media screen and ( min-width: $lg )
-					text-align: center
-			label
-				font-family: 'Graphie-Bold', sans-serif
-				color: $gray-2
-				font-size: 1.4rem
-				@media screen and ( min-width: $xl )
-					font-size: 1.8rem
+		#contact
+			position: relative
+			.z-index
+				position: absolute
+				z-index: 0
+			form
+				text-align: center
+				.input_wrap
+					@media screen and ( min-width: $lg )
+						text-align: center
+				label
+					font-family: 'Graphie-Bold', sans-serif
+					color: $gray-1
+					font-size: 1.4rem
+					@media screen and ( min-width: $xl )
+						font-size: 1.8rem
 
-			button
-				font-family: 'Graphie-Bold', sans-serif
-				font-size: 2.2rem
-				@media screen and ( min-width: $lg )
-					font-size: 2.6rem
+				button
+					font-family: 'Graphie-Bold', sans-serif
+					font-size: 2.2rem
+					text-transform: lowercase
+					@media screen and ( min-width: $lg )
+						font-size: 2.6rem
+
 	#section_01
 		padding: 7rem 0
 		#case_01
