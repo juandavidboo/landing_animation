@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "Graphie-Regular";
+  src: url("../fonts/Graphie-Regular.otf") format("opentype"); }
+
+@font-face {
+  font-family: "Graphie-SemiBold";
+  src: url("../fonts/Graphie-SemiBold.otf") format("opentype"); }
+
+@font-face {
+  font-family: "Graphie-Bold";
+  src: url("../fonts/Graphie-Bold.otf") format("opentype"); }
+
+@font-face {
+  font-family: "Graphie-ExtraBold";
+  src: url("../fonts/Graphie-ExtraBold.otf") format("opentype"); }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: 'Graphie-Regular', sans-serif;
+  color: white; }
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Graphie-ExtraBold', sans-serif;
+  color: white; }
+
+#home {
+  padding: 0; }
+  #home .navbar {
+    background-color: #E41408; }
+    #home .navbar .navbar-brand {
+      width: 125px; }
+      @media (min-width: 1200px) {
+        #home .navbar .navbar-brand {
+          width: 152.67px; } }
+  #home #hero {
+    background-color: #E41408; }
+    #home #hero .h1 {
+      font-size: 6rem; }
+      @media screen and (min-width: 992px) {
+        #home #hero .h1 {
+          font-size: 6.25rem; } }
+      @media screen and (min-width: 1200px) {
+        #home #hero .h1 {
+          font-size: 7.5rem; } }
+      @media screen and (min-width: 1600px) {
+        #home #hero .h1 {
+          font-size: 8.75rem; } }
+    #home #hero .h2 {
+      font-size: 3.4rem; }
+      @media screen and (min-width: 992px) {
+        #home #hero .h2 {
+          font-size: 3.6rem; } }
+      @media screen and (min-width: 1200px) {
+        #home #hero .h2 {
+          font-size: 4.4rem; } }
+      @media screen and (min-width: 1600px) {
+        #home #hero .h2 {
+          font-size: 5.2rem; } }
