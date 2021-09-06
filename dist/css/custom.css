@@ -27,15 +27,13 @@ body {
 
 #home {
   padding: 0; }
-  #home .navbar {
-    background-color: #E41408; }
-    #home .navbar .navbar-brand {
-      width: 125px; }
-      @media (min-width: 1200px) {
-        #home .navbar .navbar-brand {
-          width: 152.67px; } }
+  #home .navbar .navbar-brand {
+    width: 125px; }
+    @media (min-width: 1200px) {
+      #home .navbar .navbar-brand {
+        width: 152.67px; } }
   #home #hero {
-    background-color: #E41408; }
+    padding: 7rem 0; }
     #home #hero .h1 {
       font-size: 6rem; }
       @media screen and (min-width: 992px) {
@@ -82,3 +80,45 @@ body {
       @media screen and (min-width: 1200px) {
         #home #hero form#contact label {
           font-size: 1.8rem; } }
+    #home #hero form#contact button {
+      font-family: 'Graphie-Bold', sans-serif;
+      font-size: 2.2rem; }
+      @media screen and (min-width: 992px) {
+        #home #hero form#contact button {
+          font-size: 2.6rem; } }
+  #home #section_01 {
+    padding: 7rem 0; }
+    #home #section_01 #case_01 .h1 span {
+      display: none; }
+    #home #section_01 #case_01 .h1 img {
+      width: 360px; }
+    #home #section_01 #case_01 #description {
+      padding: 7rem 0; }
+      #home #section_01 #case_01 #description .h2 {
+        font-size: 4rem; }
+        @media screen and (min-width: 992px) {
+          #home #section_01 #case_01 #description .h2 {
+            font-size: 4.7rem; } }
+        @media screen and (min-width: 1200px) {
+          #home #section_01 #case_01 #description .h2 {
+            font-size: 5.6rem; } }
+        @media screen and (min-width: 1400px) {
+          #home #section_01 #case_01 #description .h2 {
+            font-size: 6.5rem; } }
+      #home #section_01 #case_01 #description .copy {
+        font-size: 1.5rem; }
+        @media screen and (min-width: 992px) {
+          #home #section_01 #case_01 #description .copy {
+            font-size: 2rem; } }
+
+.--red {
+  color: #E41408; }
+
+.--bkg_red {
+  background-color: #E41408; }
+
+.--bkg_pink {
+  background-color: #FFEAE3; }
+
+.--bkg_violet {
+  background: linear-gradient(to right, #521E48, #0B004D); }
