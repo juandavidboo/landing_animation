@@ -108,9 +108,9 @@ footer {
       width: 20vw;
       border-radius: 50%;
       left: 50%;
-      top: -50%;
+      top: 50%;
       position: absolute;
-      transform: translate(-50%, 0%);
+      transform: translate(-50%, -50%);
       z-index: -1; }
     #home #hero #contact {
       position: relative; }
@@ -130,14 +130,24 @@ footer {
               font-size: 1.8rem; } }
         #home #hero #contact form input,
         #home #hero #contact form textarea {
-          font-size: 1.5rem; }
+          font-size: 1.6rem;
+          background-color: transparent;
+          border: none;
+          border-bottom: #333333 solid 1px; }
         #home #hero #contact form button {
           font-family: 'Graphie-Bold', sans-serif;
           font-size: 2.2rem;
-          text-transform: lowercase; }
+          text-transform: lowercase;
+          margin-top: 1rem;
+          border-radius: 3rem;
+          background-color: #1E084B;
+          border-color: #1E084B;
+          padding: .2rem 2rem; }
           @media screen and (min-width: 992px) {
             #home #hero #contact form button {
               font-size: 2.6rem; } }
+          #home #hero #contact form button:hover {
+            background-color: #521E48; }
   #home #section_01 {
     padding: 7rem 0; }
     #home #section_01 #case_01 .h1 span {
@@ -164,7 +174,11 @@ footer {
             font-size: 2rem; } }
         #home #section_01 #case_01 #description .copy .badge {
           margin-left: 1rem;
-          font-size: 1.1rem; }
+          font-size: 1.2rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          background-color: #F8A30E;
+          color: black; }
     #home #section_01 #brands #highlight {
       padding: 5rem 7rem; }
       #home #section_01 #brands #highlight .h1 {

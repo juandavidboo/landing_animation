@@ -82,9 +82,9 @@ footer
 			width: 20vw
 			border-radius: 50%
 			left: 50%
-			top: -50%
+			top: 50%
 			position: absolute
-			transform: translate(-50%, 0%)
+			transform: translate(-50%, -50%)
 			z-index: -1
 
 		#contact
@@ -104,13 +104,23 @@ footer
 						font-size: 1.8rem
 				input,
 				textarea
-					font-size: 1.5rem
+					font-size: 1.6rem
+					background-color: transparent
+					border: none
+					border-bottom: $gray-1 solid 1px
 				button
 					font-family: 'Graphie-Bold', sans-serif
 					font-size: 2.2rem
 					text-transform: lowercase
+					margin-top: 1rem
+					border-radius: 3rem
+					background-color: $violet
+					border-color: $violet
+					padding: .2rem 2rem
 					@media screen and ( min-width: $lg )
 						font-size: 2.6rem
+					&:hover
+						background-color: $color1
 
 	#section_01
 		padding: 7rem 0
@@ -136,7 +146,11 @@ footer
 						font-size: 2rem
 					.badge
 						margin-left: 1rem
-						font-size: 1.1rem
+						font-size: 1.2rem
+						padding-left: 1rem 
+						padding-right: 1rem 
+						background-color: $yellow
+						color: black
 		#brands
 			#highlight
 				padding: 5rem 7rem
