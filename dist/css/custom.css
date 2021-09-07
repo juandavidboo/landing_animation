@@ -1,22 +1,3 @@
-.--red {
-  color: #E41408; }
-
-.--bkg_noise {
-  background: url("../img/bkg_noise.png") repeat; }
-
-.--bkg_red {
-  background-color: #E41408; }
-
-.--bkg_pink {
-  background-color: #FFEAE3; }
-
-.--bkg_violet {
-  background: linear-gradient(to right, #521E48, #0B004D); }
-
-@font-face {
-  font-family: "Graphie-Regular";
-  src: url("../fonts/Graphie-Regular.otf") format("opentype"); }
-
 @font-face {
   font-family: "Graphie-SemiBold";
   src: url("../fonts/Graphie-SemiBold.otf") format("opentype"); }
@@ -53,51 +34,67 @@ footer {
     font-size: 2.2rem;
     margin: 0; }
 
+.--red {
+  color: #E41408; }
+
+.--bkg_noise {
+  background: url("../img/bkg_red_noise.png") repeat; }
+
+.--bkg_red {
+  background-color: #E41408; }
+
+.--bkg_pink {
+  background-color: #FFEAE3; }
+
+.--bkg_violet {
+  background: linear-gradient(to right, #521E48, #0B004D); }
+
+@media (max-width: 992px) {
+  .--mobile_hide {
+    display: none; } }
+
 #home {
   padding: 0; }
-  #home #hero {
+  #home #hero #intro {
     padding: 7rem 0; }
-    #home #hero .h1 {
-      font-size: 6rem; }
+    #home #hero #intro .h1 {
+      font-size: 6rem;
+      line-height: 1.1em;
+      margin-bottom: 0.4em; }
       @media screen and (min-width: 992px) {
-        #home #hero .h1 {
+        #home #hero #intro .h1 {
           font-size: 6.25rem; } }
       @media screen and (min-width: 1200px) {
-        #home #hero .h1 {
+        #home #hero #intro .h1 {
           font-size: 7.5rem; } }
       @media screen and (min-width: 1400px) {
-        #home #hero .h1 {
+        #home #hero #intro .h1 {
           font-size: 8.75rem; } }
-    #home #hero .h2 {
+    #home #hero #intro .h2 {
       font-size: 3.4rem; }
       @media screen and (min-width: 992px) {
-        #home #hero .h2 {
+        #home #hero #intro .h2 {
           font-size: 3.6rem; } }
       @media screen and (min-width: 1200px) {
-        #home #hero .h2 {
+        #home #hero #intro .h2 {
           font-size: 4.4rem; } }
       @media screen and (min-width: 1400px) {
-        #home #hero .h2 {
+        #home #hero #intro .h2 {
           font-size: 5.2rem; } }
-      #home #hero .h2 span {
+      #home #hero #intro .h2 span {
         display: block;
-        font-size: 2.5rem; }
-        @media screen and (min-width: 1200px) {
-          #home #hero .h2 span {
-            font-size: 2.75rem; } }
-        @media screen and (min-width: 1400px) {
-          #home #hero .h2 span {
-            font-size: 3.2rem; } }
-      #home #hero .h2 .capsule_wrap {
-        display: inline-block; }
-        #home #hero .h2 .capsule_wrap .capsule {
+        font-size: 0.615em; }
+      #home #hero #intro .h2 .capsule_wrap {
+        display: inline-block;
+        vertical-align: bottom; }
+        #home #hero #intro .h2 .capsule_wrap .capsule {
           text-align: center;
           width: 100%;
           position: relative; }
-          #home #hero .h2 .capsule_wrap .capsule::before {
+          #home #hero #intro .h2 .capsule_wrap .capsule::before {
             content: '';
             background-color: white;
-            height: 46px;
+            height: 1em;
             width: 120%;
             border-radius: 24px;
             left: 10%;
@@ -105,29 +102,32 @@ footer {
             position: absolute;
             transform: translate(0%, 0%);
             z-index: 1; }
-          #home #hero .h2 .capsule_wrap .capsule .text_wrap {
+          #home #hero #intro .h2 .capsule_wrap .capsule .text_wrap {
             margin-left: 20%;
             width: 4.25em;
-            height: 38px;
+            height: 1em;
             position: relative; }
-            #home #hero .h2 .capsule_wrap .capsule .text_wrap span {
+            #home #hero #intro .h2 .capsule_wrap .capsule .text_wrap span {
               color: #E41408;
               position: absolute;
               left: 50%;
-              top: 3px;
-              transform: translateX(-50%);
+              top: 50%;
+              transform: translate(-50%, -50%);
               z-index: 1; }
-    #home #hero .h3 {
+  #home #hero #contact {
+    padding: 7rem 0;
+    position: relative; }
+    #home #hero #contact .h3 {
       position: relative;
       font-size: 3.2rem;
       text-align: center; }
       @media screen and (min-width: 1200px) {
-        #home #hero .h3 {
+        #home #hero #contact .h3 {
           font-size: 3.6rem; } }
       @media screen and (min-width: 1400px) {
-        #home #hero .h3 {
+        #home #hero #contact .h3 {
           font-size: 4.2rem; } }
-    #home #hero .circle_bkg::before {
+    #home #hero #contact .circle_bkg::before {
       content: '';
       background-color: #F8A30E;
       height: 20vw;
@@ -138,42 +138,43 @@ footer {
       position: absolute;
       transform: translate(-50%, -50%);
       z-index: -1; }
-    #home #hero #contact {
-      position: relative; }
-      #home #hero #contact .z-index {
-        z-index: 0; }
-      #home #hero #contact form {
-        text-align: center; }
+      @media (max-width: 992px) {
+        #home #hero #contact .circle_bkg::before {
+          display: none; } }
+    #home #hero #contact .z-index {
+      z-index: 0; }
+    #home #hero #contact form {
+      text-align: center; }
+      @media screen and (min-width: 992px) {
+        #home #hero #contact form .input_wrap {
+          text-align: center; } }
+      #home #hero #contact form label {
+        font-family: 'Graphie-Bold', sans-serif;
+        color: #333333;
+        font-size: 1.4rem; }
+        @media screen and (min-width: 1200px) {
+          #home #hero #contact form label {
+            font-size: 1.8rem; } }
+      #home #hero #contact form input,
+      #home #hero #contact form textarea {
+        font-size: 1.6rem;
+        background-color: transparent;
+        border: none;
+        border-bottom: #333333 solid 1px; }
+      #home #hero #contact form button {
+        font-family: 'Graphie-Bold', sans-serif;
+        font-size: 2.2rem;
+        text-transform: lowercase;
+        margin-top: 1rem;
+        border-radius: 3rem;
+        background-color: #1E084B;
+        border-color: #1E084B;
+        padding: .2rem 2rem; }
         @media screen and (min-width: 992px) {
-          #home #hero #contact form .input_wrap {
-            text-align: center; } }
-        #home #hero #contact form label {
-          font-family: 'Graphie-Bold', sans-serif;
-          color: #333333;
-          font-size: 1.4rem; }
-          @media screen and (min-width: 1200px) {
-            #home #hero #contact form label {
-              font-size: 1.8rem; } }
-        #home #hero #contact form input,
-        #home #hero #contact form textarea {
-          font-size: 1.6rem;
-          background-color: transparent;
-          border: none;
-          border-bottom: #333333 solid 1px; }
-        #home #hero #contact form button {
-          font-family: 'Graphie-Bold', sans-serif;
-          font-size: 2.2rem;
-          text-transform: lowercase;
-          margin-top: 1rem;
-          border-radius: 3rem;
-          background-color: #1E084B;
-          border-color: #1E084B;
-          padding: .2rem 2rem; }
-          @media screen and (min-width: 992px) {
-            #home #hero #contact form button {
-              font-size: 2.6rem; } }
-          #home #hero #contact form button:hover {
-            background-color: #521E48; }
+          #home #hero #contact form button {
+            font-size: 2.6rem; } }
+        #home #hero #contact form button:hover {
+          background-color: #521E48; }
   #home #section_01 {
     padding: 7rem 0; }
     #home #section_01 #case_01 .h1 span {

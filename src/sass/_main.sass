@@ -1,4 +1,6 @@
-@font-face 
+// FONTS
+	
+	@font-face 
 	font-family: "Graphie-Regular"
 	src: url("../fonts/Graphie-Regular.otf") format('opentype')
 @font-face 
@@ -11,6 +13,7 @@
 	font-family: "Graphie-ExtraBold"
 	src: url("../fonts/Graphie-ExtraBold.otf") format('opentype')
 
+
 html
 	font-size: 62.5%
 
@@ -21,6 +24,9 @@ body
 .h1, .h2, .h3, .h4, .h5, .h6
 	font-family: 'Graphie-ExtraBold', sans-serif
 	color: white
+
+
+// HEADER & FOOTER
 
 header	
 	.navbar
@@ -36,85 +42,117 @@ footer
 		font-size: 2.2rem
 		margin: 0
 
+
+// HELPERS
+
+.--red
+	color: $red
+
+.--bkg_noise
+	background: url("../img/bkg_red_noise.png") repeat
+
+.--bkg_red
+	background-color: $red
+
+.--bkg_pink
+	background-color: $pink
+
+.--bkg_violet
+	background: linear-gradient(to right, $color1, $color2)
+
+.--mobile_hide
+	@media (max-width: $lg)
+		display: none
+
+
+// LANDING PAGE
+
 #home
 	padding: 0
 	
 	#hero
-		padding: 7rem 0
-		.h1
-			font-size: 6rem
-			@media screen and ( min-width: $lg )
-				font-size: 6.25rem
-			@media screen and ( min-width: $xl )
-				font-size: 7.5rem
-			@media screen and ( min-width: $xxl )
-				font-size: 8.75rem
-		.h2
-			font-size: 3.4rem
-			@media screen and ( min-width: $lg )
-				font-size: 3.6rem
-			@media screen and ( min-width: $xl )
-				font-size: 4.4rem
-			@media screen and ( min-width: $xxl )
-				font-size: 5.2rem
-			span
-				display: block
-				font-size: 2.5rem
+		#intro
+			padding: 7rem 0
+			.h1
+				font-size: 6rem
+				line-height: 1.1em
+				margin-bottom: 0.4em
+				@media screen and ( min-width: $lg )
+					font-size: 6.25rem
 				@media screen and ( min-width: $xl )
-					font-size: 2.75rem
+					font-size: 7.5rem
 				@media screen and ( min-width: $xxl )
-					font-size: 3.2rem
-			.capsule_wrap
-				display: inline-block
-				.capsule
-					text-align: center
-					width: 100%
-					position: relative 
-					&::before
-						content: ''
-						background-color: white
-						height: 46px
-						width: 120%
-						border-radius: 24px
-						left: 10%
-						top: 0
-						position: absolute
-						transform: translate(0%, 0%)
-						z-index: 1
-					.text_wrap
-						margin-left: 20%
-						width: 4.25em //1 em = 52
-						height: 38px
+					font-size: 8.75rem
+			.h2
+				font-size: 3.4rem
+				@media screen and ( min-width: $lg )
+					font-size: 3.6rem
+				@media screen and ( min-width: $xl )
+					font-size: 4.4rem
+				@media screen and ( min-width: $xxl )
+					font-size: 5.2rem
+				span
+					display: block
+					font-size: 0.615em//2.5rem | 1em = 52px
+					@media screen and ( min-width: $xl )
+						//font-size: 2.75rem
+					@media screen and ( min-width: $xxl )
+						//font-size: 3.2rem
+				.capsule_wrap
+					display: inline-block
+					vertical-align: bottom
+					.capsule
+						text-align: center
+						width: 100%
 						position: relative 
-						span
-							color: $red
+						&::before
+							content: ''
+							background-color: white
+							height: 1em
+							width: 120%
+							border-radius: 24px
+							left: 10%
+							top: 0
 							position: absolute
-							left: 50%
-							top: 3px
-							transform: translateX(-50%)
+							transform: translate(0%, 0%)
 							z-index: 1
-		.h3
-			position: relative
-			font-size: 3.2rem
-			text-align: center
-			@media screen and ( min-width: $xl )
-				font-size: 3.6rem
-			@media screen and ( min-width: $xxl )
-				font-size: 4.2rem
-		.circle_bkg::before
-			content: ''
-			background-color: $yellow
-			height: 20vw
-			width: 20vw
-			border-radius: 50%
-			left: 50%
-			top: 50%
-			position: absolute
-			transform: translate(-50%, -50%)
-			z-index: -1
-
+						.text_wrap
+							margin-left: 20%
+							//padding-top: 0.1em
+							width: 4.25em //1em = 52px 
+							height: 1em //1em = 52px
+							position: relative 
+							span
+								color: $red
+								position: absolute
+								left: 50%
+								top: 50%
+								transform: translate(-50%, -50%)
+								z-index: 1
 		#contact
+			padding: 7rem 0
 			position: relative
+			.h3
+				position: relative
+				font-size: 3.2rem
+				text-align: center
+				@media screen and ( min-width: $xl )
+					font-size: 3.6rem
+				@media screen and ( min-width: $xxl )
+					font-size: 4.2rem
+			.circle_bkg::before
+				content: ''
+				background-color: $yellow
+				height: 20vw
+				width: 20vw
+				border-radius: 50%
+				left: 50%
+				top: 50%
+				position: absolute
+				transform: translate(-50%, -50%)
+				z-index: -1
+				@media (max-width: $lg)
+					display: none
 			.z-index
 				z-index: 0
 			form
