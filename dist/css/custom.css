@@ -1,4 +1,8 @@
 @font-face {
+  font-family: "Graphie-Regular";
+  src: url("../fonts/Graphie-Regular.otf") format("opentype"); }
+
+@font-face {
   font-family: "Graphie-SemiBold";
   src: url("../fonts/Graphie-SemiBold.otf") format("opentype"); }
 
@@ -15,30 +19,50 @@ html {
 
 body {
   font-family: 'Graphie-Regular', sans-serif;
-  color: white; }
+  color: #EEEEEE;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased; }
 
-.h1, .h2, .h3, .h4, .h5, .h6 {
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: 'Graphie-ExtraBold', sans-serif;
-  color: white; }
+  color: white;
+  margin: 0; }
 
-header .navbar .navbar-brand {
-  width: 125px; }
-  @media (min-width: 1200px) {
-    header .navbar .navbar-brand {
-      width: 152.67px; } }
+p {
+  margin: 1em 0; }
+
+.container {
+  padding: 0 2.5rem; }
+  @media screen and (min-width: 992px) {
+    .container {
+      padding: 0; } }
+
+header {
+  padding: 2rem 0; }
+  header .navbar .navbar-brand img {
+    width: 136px; }
 
 footer {
   padding: 2rem 0; }
+  footer .footer-brand img {
+    width: 75px; }
+    @media (min-width: 1200px) {
+      footer .footer-brand img {
+        width: 136px; } }
   footer p {
     display: inline-block;
-    font-size: 2.2rem;
-    margin: 0; }
+    font-size: 1.1rem; }
+    @media (min-width: 1200px) {
+      footer p {
+        font-size: 2.1rem;
+        margin: 0; } }
 
 .--red {
   color: #E41408; }
 
 .--bkg_noise {
-  background: url("../img/bkg_red_noise.png") repeat; }
+  background: url("../img/bkg_noise.png") repeat; }
 
 .--bkg_red {
   background-color: #E41408; }
@@ -55,79 +79,87 @@ footer {
 
 #home {
   padding: 0; }
-  #home #hero #intro {
-    padding: 7rem 0; }
-    #home #hero #intro .h1 {
+  #home #intro {
+    padding: 6rem 0; }
+    #home #intro .h1 {
       font-size: 6rem;
       line-height: 1.1em;
       margin-bottom: 0.4em; }
       @media screen and (min-width: 992px) {
-        #home #hero #intro .h1 {
+        #home #intro .h1 {
           font-size: 6.25rem; } }
       @media screen and (min-width: 1200px) {
-        #home #hero #intro .h1 {
+        #home #intro .h1 {
           font-size: 7.5rem; } }
       @media screen and (min-width: 1400px) {
-        #home #hero #intro .h1 {
+        #home #intro .h1 {
           font-size: 8.75rem; } }
-    #home #hero #intro .h2 {
+    #home #intro .h2 {
       font-size: 3.4rem; }
       @media screen and (min-width: 992px) {
-        #home #hero #intro .h2 {
+        #home #intro .h2 {
           font-size: 3.6rem; } }
       @media screen and (min-width: 1200px) {
-        #home #hero #intro .h2 {
+        #home #intro .h2 {
           font-size: 4.4rem; } }
       @media screen and (min-width: 1400px) {
-        #home #hero #intro .h2 {
+        #home #intro .h2 {
           font-size: 5.2rem; } }
-      #home #hero #intro .h2 span {
+      #home #intro .h2 span {
         display: block;
         font-size: 0.615em; }
-      #home #hero #intro .h2 .capsule_wrap {
+      #home #intro .h2 .pill_wrap {
         display: inline-block;
-        vertical-align: bottom; }
-        #home #hero #intro .h2 .capsule_wrap .capsule {
-          text-align: center;
-          width: 100%;
+        vertical-align: bottom;
+        padding-right: 0.9em; }
+      #home #intro .h2 .pill {
+        text-align: center;
+        width: 100%;
+        position: relative; }
+        #home #intro .h2 .pill::before {
+          content: '';
+          background-color: white;
+          height: 1em;
+          width: 120%;
+          border-radius: 24px;
+          left: 0;
+          top: 0;
+          position: absolute;
+          transform: translate(0%, 0%);
+          z-index: 1; }
+        #home #intro .h2 .pill .text_wrap {
+          margin-left: 10%;
+          width: 4.25em;
+          height: 1em;
           position: relative; }
-          #home #hero #intro .h2 .capsule_wrap .capsule::before {
-            content: '';
-            background-color: white;
-            height: 1em;
-            width: 120%;
-            border-radius: 24px;
-            left: 10%;
-            top: 0;
+          #home #intro .h2 .pill .text_wrap span {
+            color: #E41408;
             position: absolute;
-            transform: translate(0%, 0%);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
             z-index: 1; }
-          #home #hero #intro .h2 .capsule_wrap .capsule .text_wrap {
-            margin-left: 20%;
-            width: 4.25em;
-            height: 1em;
-            position: relative; }
-            #home #hero #intro .h2 .capsule_wrap .capsule .text_wrap span {
-              color: #E41408;
-              position: absolute;
-              left: 50%;
-              top: 50%;
-              transform: translate(-50%, -50%);
-              z-index: 1; }
-  #home #hero #contact {
-    padding: 7rem 0;
+  #home #contact {
+    padding: 6rem 0;
     position: relative; }
-    #home #hero #contact .h3 {
+    @media screen and (min-width: 992px) {
+      #home #contact {
+        padding: 0 0 6rem 0;
+        background-color: unset; } }
+    @media screen and (max-width: 992px) {
+      #home #contact::before {
+        content: ''; } }
+    #home #contact .h3 {
       position: relative;
       font-size: 3.2rem;
       text-align: center; }
       @media screen and (min-width: 1200px) {
-        #home #hero #contact .h3 {
+        #home #contact .h3 {
           font-size: 3.6rem; } }
       @media screen and (min-width: 1400px) {
-        #home #hero #contact .h3 {
+        #home #contact .h3 {
           font-size: 4.2rem; } }
-    #home #hero #contact .circle_bkg::before {
+    #home #contact .circle_bkg::before {
       content: '';
       background-color: #F8A30E;
       height: 20vw;
@@ -139,29 +171,29 @@ footer {
       transform: translate(-50%, -50%);
       z-index: -1; }
       @media (max-width: 992px) {
-        #home #hero #contact .circle_bkg::before {
+        #home #contact .circle_bkg::before {
           display: none; } }
-    #home #hero #contact .z-index {
+    #home #contact .z-index {
       z-index: 0; }
-    #home #hero #contact form {
+    #home #contact form {
       text-align: center; }
       @media screen and (min-width: 992px) {
-        #home #hero #contact form .input_wrap {
+        #home #contact form .input_wrap {
           text-align: center; } }
-      #home #hero #contact form label {
+      #home #contact form label {
         font-family: 'Graphie-Bold', sans-serif;
         color: #333333;
         font-size: 1.4rem; }
         @media screen and (min-width: 1200px) {
-          #home #hero #contact form label {
+          #home #contact form label {
             font-size: 1.8rem; } }
-      #home #hero #contact form input,
-      #home #hero #contact form textarea {
+      #home #contact form input,
+      #home #contact form textarea {
         font-size: 1.6rem;
         background-color: transparent;
         border: none;
         border-bottom: #333333 solid 1px; }
-      #home #hero #contact form button {
+      #home #contact form button {
         font-family: 'Graphie-Bold', sans-serif;
         font-size: 2.2rem;
         text-transform: lowercase;
@@ -171,57 +203,104 @@ footer {
         border-color: #1E084B;
         padding: .2rem 2rem; }
         @media screen and (min-width: 992px) {
-          #home #hero #contact form button {
+          #home #contact form button {
             font-size: 2.6rem; } }
-        #home #hero #contact form button:hover {
+        #home #contact form button:hover {
           background-color: #521E48; }
   #home #section_01 {
-    padding: 7rem 0; }
-    #home #section_01 #case_01 .h1 span {
+    padding: 6rem 0; }
+    #home #section_01 .h1 {
+      font-size: 4rem; }
+      @media screen and (min-width: 992px) {
+        #home #section_01 .h1 {
+          font-size: 4.7rem; } }
+      @media screen and (min-width: 1200px) {
+        #home #section_01 .h1 {
+          font-size: 5.6rem; } }
+      @media screen and (min-width: 1400px) {
+        #home #section_01 .h1 {
+          font-size: 6.5rem; } }
+    #home #section_01 .h2 span {
       display: none; }
-    #home #section_01 #case_01 .h1 img {
-      width: 360px; }
-    #home #section_01 #case_01 #description {
-      padding: 7rem 0; }
-      #home #section_01 #case_01 #description .h2 {
-        font-size: 4rem; }
+    #home #section_01 .cases #carouselIndicators .carousel-indicators {
+      margin-bottom: -6rem; }
+    #home #section_01 .cases #carouselIndicators .carousel-control-next, #home #section_01 .cases #carouselIndicators .carousel-control-prev {
+      width: unset; }
+    #home #section_01 .case .animation .case_anim {
+      padding-top: 6rem;
+      width: 100%;
+      max-width: 440px; }
+    #home #section_01 .case .description {
+      padding-top: 6rem; }
+      #home #section_01 .case .description .case_logo {
+        width: 50%; }
+      #home #section_01 .case .description .copy {
+        font-size: 1.5rem;
+        margin-top: 2em; }
         @media screen and (min-width: 992px) {
-          #home #section_01 #case_01 #description .h2 {
-            font-size: 4.7rem; } }
-        @media screen and (min-width: 1200px) {
-          #home #section_01 #case_01 #description .h2 {
-            font-size: 5.6rem; } }
-        @media screen and (min-width: 1400px) {
-          #home #section_01 #case_01 #description .h2 {
-            font-size: 6.5rem; } }
-      #home #section_01 #case_01 #description .copy {
-        font-size: 1.5rem; }
-        @media screen and (min-width: 992px) {
-          #home #section_01 #case_01 #description .copy {
+          #home #section_01 .case .description .copy {
             font-size: 2rem; } }
-        #home #section_01 #case_01 #description .copy .badge {
+        #home #section_01 .case .description .copy .services {
+          display: inline-block;
+          margin-top: 0; }
+        #home #section_01 .case .description .copy .badge {
           margin-left: 1rem;
           font-size: 1.2rem;
           padding-left: 1rem;
           padding-right: 1rem;
           background-color: #F8A30E;
           color: black; }
-    #home #section_01 #brands #highlight {
-      padding: 5rem 7rem; }
-      #home #section_01 #brands #highlight .h1 {
-        color: #000;
-        font-size: 3.4rem;
-        text-align: center; }
+  #home #section_02 {
+    padding: 6rem 0; }
+    #home #section_02 .h1 {
+      font-size: 4rem; }
+      @media screen and (min-width: 992px) {
+        #home #section_02 .h1 {
+          font-size: 4.7rem; } }
+      @media screen and (min-width: 1200px) {
+        #home #section_02 .h1 {
+          font-size: 5.6rem; } }
+      @media screen and (min-width: 1400px) {
+        #home #section_02 .h1 {
+          font-size: 6.5rem; } }
+    #home #section_02 .h2 span {
+      display: none; }
+    #home #section_02 .testimonials {
+      padding-top: 6rem; }
+      #home #section_02 .testimonials img {
+        padding: 0 3rem;
+        width: 100%;
+        max-width: 400px; }
+  #home #section_03 {
+    padding: 6rem 0; }
+    #home #section_03 #highlight {
+      padding: 3rem 4rem; }
+      @media screen and (min-width: 992px) {
+        #home #section_03 #highlight {
+          padding: 5rem 7rem; } }
+    #home #section_03 .h1 {
+      color: #000;
+      font-size: 3.4rem;
+      text-align: center; }
+      @media screen and (min-width: 992px) {
+        #home #section_03 .h1 {
+          font-size: 3.6rem; } }
+      @media screen and (min-width: 1200px) {
+        #home #section_03 .h1 {
+          font-size: 4.4rem; } }
+      @media screen and (min-width: 1400px) {
+        #home #section_03 .h1 {
+          font-size: 5.2rem; } }
+    #home #section_03 #display {
+      margin-top: 3rem; }
+      @media screen and (min-width: 1200px) {
+        #home #section_03 #display {
+          margin-top: 5rem; } }
+      #home #section_03 #display .item {
+        padding: 2rem 2rem; }
         @media screen and (min-width: 992px) {
-          #home #section_01 #brands #highlight .h1 {
-            font-size: 3.6rem; } }
+          #home #section_03 #display .item {
+            padding: 1rem 2rem; } }
         @media screen and (min-width: 1200px) {
-          #home #section_01 #brands #highlight .h1 {
-            font-size: 4.4rem; } }
-        @media screen and (min-width: 1400px) {
-          #home #section_01 #brands #highlight .h1 {
-            font-size: 5.2rem; } }
-      #home #section_01 #brands #highlight #display {
-        margin-top: 5rem; }
-        #home #section_01 #brands #highlight #display .item {
-          padding: 1rem 3rem; }
+          #home #section_03 #display .item {
+            padding: 1rem 3rem; } }

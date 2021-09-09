@@ -1,6 +1,6 @@
 // FONTS
-	
-	@font-face 
+
+@font-face 
 	font-family: "Graphie-Regular"
 	src: url("../fonts/Graphie-Regular.otf") format('opentype')
 @font-face 
@@ -19,28 +19,48 @@ html
 
 body
 	font-family: 'Graphie-Regular', sans-serif
-	color: white
+	color: $white
+	-webkit-font-smoothing: antialiased
+	-moz-font-smoothing: antialiased
+	-o-font-smoothing: antialiased
 
-.h1, .h2, .h3, .h4, .h5, .h6
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
 	font-family: 'Graphie-ExtraBold', sans-serif
 	color: white
+	margin: 0
 
+p
+	margin: 1em 0
+
+.container
+	padding: 0 2.5rem
+	@media screen and ( min-width: $lg )
+		padding: 0
 
 // HEADER & FOOTER
 
-header	
+header
+	padding: 2rem 0
 	.navbar
 		.navbar-brand
-			width: 125px
-			@media (min-width:$xl)
-				width: 152.67px
+			img
+				width: 136px
+
 
 footer
 	padding: 2rem 0
+	.footer-brand
+		img
+			width: 75px
+			@media (min-width:$xl)
+				width: 136px
 	p
 		display: inline-block
-		font-size: 2.2rem
-		margin: 0
+		font-size: 1.1rem
+		@media (min-width:$xl)
+			font-size: 2.1rem
+			margin: 0
+
 
 
 // HELPERS
@@ -49,7 +69,7 @@ footer
 	color: $red
 
 .--bkg_noise
-	background: url("../img/bkg_red_noise.png") repeat
+	background: url("../img/bkg_noise.png") repeat
 
 .--bkg_red
 	background-color: $red
@@ -64,150 +84,180 @@ footer
 	@media (max-width: $lg)
 		display: none
 
+.container
+
 
 // LANDING PAGE
 
 #home
 	padding: 0
-	
+
+	// HERO SECTION
+
 	#hero
-		#intro
-			padding: 7rem 0
-			.h1
-				font-size: 6rem
-				line-height: 1.1em
-				margin-bottom: 0.4em
-				@media screen and ( min-width: $lg )
-					font-size: 6.25rem
+	#intro
+		padding: 6rem 0
+		.h1
+			font-size: 6rem
+			line-height: 1.1em
+			margin-bottom: 0.4em
+			@media screen and ( min-width: $lg )
+				font-size: 6.25rem
+			@media screen and ( min-width: $xl )
+				font-size: 7.5rem
+			@media screen and ( min-width: $xxl )
+				font-size: 8.75rem
+		.h2
+			font-size: 3.4rem
+			@media screen and ( min-width: $lg )
+				font-size: 3.6rem
+			@media screen and ( min-width: $xl )
+				font-size: 4.4rem
+			@media screen and ( min-width: $xxl )
+				font-size: 5.2rem
+			span
+				display: block
+				font-size: 0.615em//2.5rem | 1em = 52px
 				@media screen and ( min-width: $xl )
-					font-size: 7.5rem
+					//font-size: 2.75rem
 				@media screen and ( min-width: $xxl )
-					font-size: 8.75rem
-			.h2
-				font-size: 3.4rem
-				@media screen and ( min-width: $lg )
-					font-size: 3.6rem
-				@media screen and ( min-width: $xl )
-					font-size: 4.4rem
-				@media screen and ( min-width: $xxl )
-					font-size: 5.2rem
-				span
-					display: block
-					font-size: 0.615em//2.5rem | 1em = 52px
-					@media screen and ( min-width: $xl )
-						//font-size: 2.75rem
-					@media screen and ( min-width: $xxl )
-						//font-size: 3.2rem
-				.capsule_wrap
-					display: inline-block
-					vertical-align: bottom
-					.capsule
-						text-align: center
-						width: 100%
-						position: relative 
-						&::before
-							content: ''
-							background-color: white
-							height: 1em
-							width: 120%
-							border-radius: 24px
-							left: 10%
-							top: 0
-							position: absolute
-							transform: translate(0%, 0%)
-							z-index: 1
-						.text_wrap
-							margin-left: 20%
-							//padding-top: 0.1em
-							width: 4.25em //1em = 52px 
-							height: 1em //1em = 52px
-							position: relative 
-							span
-								color: $red
-								position: absolute
-								left: 50%
-								top: 50%
-								transform: translate(-50%, -50%)
-								z-index: 1
-		#contact
-			padding: 7rem 0
-			position: relative
-			.h3
-				position: relative
-				font-size: 3.2rem
+					//font-size: 3.2rem
+			.pill_wrap
+				display: inline-block
+				vertical-align: bottom
+				padding-right: 0.9em
+			.pill
 				text-align: center
-				@media screen and ( min-width: $xl )
-					font-size: 3.6rem
-				@media screen and ( min-width: $xxl )
-					font-size: 4.2rem
-			.circle_bkg::before
+				width: 100%
+				position: relative 
+				&::before
+					content: ''
+					background-color: white
+					height: 1em
+					width: 120%
+					border-radius: 24px
+					left: 0
+					top: 0
+					position: absolute
+					transform: translate(0%, 0%)
+					z-index: 1
+				.text_wrap
+					margin-left: 10%
+					//padding-top: 0.1em
+					width: 4.25em //1em = 52px 
+					height: 1em //1em = 52px
+					position: relative 
+					span
+						color: $red
+						position: absolute
+						left: 50%
+						top: 50%
+						transform: translate(-50%, -50%)
+						z-index: 1
+	// CONTACT SECTION
+
+	#contact
+		padding: 6rem 0
+		position: relative
+		@media screen and ( min-width: $lg )
+			padding: 0 0 6rem 0
+			background-color: unset
+		&::before
+			@media screen and ( max-width: $lg )
 				content: ''
-				background-color: $yellow
-				height: 20vw
-				width: 20vw
-				border-radius: 50%
-				left: 50%
-				top: 50%
-				position: absolute
-				transform: translate(-50%, -50%)
-				z-index: -1
-				@media (max-width: $lg)
-					display: none
-			.z-index
-				z-index: 0
-			form
-				text-align: center
-				.input_wrap
-					@media screen and ( min-width: $lg )
-						text-align: center
-				label
-					font-family: 'Graphie-Bold', sans-serif
-					color: $gray-1
-					font-size: 1.4rem
-					@media screen and ( min-width: $xl )
-						font-size: 1.8rem
-				input,
-				textarea
-					font-size: 1.6rem
-					background-color: transparent
-					border: none
-					border-bottom: $gray-1 solid 1px
-				button
-					font-family: 'Graphie-Bold', sans-serif
-					font-size: 2.2rem
-					text-transform: lowercase
-					margin-top: 1rem
-					border-radius: 3rem
-					background-color: $violet
-					border-color: $violet
-					padding: .2rem 2rem
-					@media screen and ( min-width: $lg )
-						font-size: 2.6rem
-					&:hover
-						background-color: $color1
+		.h3
+			position: relative
+			font-size: 3.2rem
+			text-align: center
+			@media screen and ( min-width: $xl )
+				font-size: 3.6rem
+			@media screen and ( min-width: $xxl )
+				font-size: 4.2rem
+		.circle_bkg::before
+			content: ''
+			background-color: $yellow
+			height: 20vw
+			width: 20vw
+			border-radius: 50%
+			left: 50%
+			top: 50%
+			position: absolute
+			transform: translate(-50%, -50%)
+			z-index: -1
+			@media (max-width: $lg)
+				display: none
+		.z-index
+			z-index: 0
+		form
+			text-align: center
+			.input_wrap
+				@media screen and ( min-width: $lg )
+					text-align: center
+			label
+				font-family: 'Graphie-Bold', sans-serif
+				color: $gray-1
+				font-size: 1.4rem
+				@media screen and ( min-width: $xl )
+					font-size: 1.8rem
+			input,
+			textarea
+				font-size: 1.6rem
+				background-color: transparent
+				border: none
+				border-bottom: $gray-1 solid 1px
+			button
+				font-family: 'Graphie-Bold', sans-serif
+				font-size: 2.2rem
+				text-transform: lowercase
+				margin-top: 1rem
+				border-radius: 3rem
+				background-color: $violet
+				border-color: $violet
+				padding: .2rem 2rem
+				@media screen and ( min-width: $lg )
+					font-size: 2.6rem
+				&:hover
+					background-color: $color1
+
+	// SECTION 01 - EPIC STORIES
 
 	#section_01
-		padding: 7rem 0
-		#case_01
-			.h1
-				span
-					display: none
-				img
-					width: 360px
-			#description
-				padding: 7rem 0
-				.h2
-					font-size: 4rem
-					@media screen and ( min-width: $lg )
-						font-size: 4.7rem
-					@media screen and ( min-width: $xl )
-						font-size: 5.6rem
-					@media screen and ( min-width: $xxl )
-						font-size: 6.5rem
+		padding: 6rem 0
+		.h1
+			font-size: 4rem
+			@media screen and ( min-width: $lg )
+				font-size: 4.7rem
+			@media screen and ( min-width: $xl )
+				font-size: 5.6rem
+			@media screen and ( min-width: $xxl )
+				font-size: 6.5rem
+		.h2
+			span
+				display: none
+		.cases
+			#carouselIndicators
+				.carousel-indicators
+					margin-bottom: -6rem
+				.carousel-control-next, .carousel-control-prev
+					width: unset
+		.case
+			.animation
+				.case_anim
+					padding-top: 6rem
+					width: 100%
+					max-width: 440px
+			.description
+				padding-top: 6rem
+				.case_logo
+					width: 50%
 				.copy
 					font-size: 1.5rem
+					margin-top: 2em
 					@media screen and ( min-width: $lg )
 						font-size: 2rem
+					.services
+						display: inline-block
+						margin-top: 0
 					.badge
 						margin-left: 1rem
 						font-size: 1.2rem
@@ -215,20 +265,58 @@ footer
 						padding-right: 1rem 
 						background-color: $yellow
 						color: black
+			
+
+	// SECTION 02 - TESTIMONIALS
+
+	#section_02
+		padding: 6rem 0
+		.h1
+			font-size: 4rem
+			@media screen and ( min-width: $lg )
+				font-size: 4.7rem
+			@media screen and ( min-width: $xl )
+				font-size: 5.6rem
+			@media screen and ( min-width: $xxl )
+				font-size: 6.5rem
+		.h2
+			span
+				display: none
+		.testimonials
+			padding-top: 6rem
+			img
+				padding: 0 3rem
+				width: 100%
+				max-width: 400px
+
+
+
+	// SECTION 03 - PARTNERS
+
+	#section_03
+		padding: 6rem 0
 		#brands
-			#highlight
+		#highlight
+			padding: 3rem 4rem
+			@media screen and ( min-width: $lg )
 				padding: 5rem 7rem
-				.h1
-					color: #000
-					font-size: 3.4rem
-					text-align: center
-					@media screen and ( min-width: $lg )
-						font-size: 3.6rem
-					@media screen and ( min-width: $xl )
-						font-size: 4.4rem
-					@media screen and ( min-width: $xxl )
-						font-size: 5.2rem
-				#display
-					margin-top: 5rem
-					.item
-						padding: 1rem 3rem
+		.h1
+			color: #000
+			font-size: 3.4rem
+			text-align: center
+			@media screen and ( min-width: $lg )
+				font-size: 3.6rem
+			@media screen and ( min-width: $xl )
+				font-size: 4.4rem
+			@media screen and ( min-width: $xxl )
+				font-size: 5.2rem
+		#display
+			margin-top: 3rem
+			@media screen and ( min-width: $xl )
+				margin-top: 5rem
+			.item
+				padding: 2rem 2rem
+				@media screen and ( min-width: $lg )
+					padding: 1rem 2rem
+				@media screen and ( min-width: $xl )
+					padding: 1rem 3rem
