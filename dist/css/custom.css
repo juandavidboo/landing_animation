@@ -1,4 +1,8 @@
 @font-face {
+  font-family: "Graphie-Book";
+  src: url("../fonts/Graphie-Book.otf") format("opentype"); }
+
+@font-face {
   font-family: "Graphie-Regular";
   src: url("../fonts/Graphie-Regular.otf") format("opentype"); }
 
@@ -235,6 +239,7 @@ footer {
       #home #section_01 .case .description .case_logo {
         width: 50%; }
       #home #section_01 .case .description .copy {
+        font-family: 'Graphie-Book', sans-serif;
         font-size: 1.5rem;
         margin-top: 2em; }
         @media screen and (min-width: 992px) {
@@ -267,10 +272,26 @@ footer {
       display: none; }
     #home #section_02 .testimonials {
       padding-top: 6rem; }
-      #home #section_02 .testimonials img {
+      #home #section_02 .testimonials .pic {
         padding: 0 3rem;
         width: 100%;
         max-width: 400px; }
+      #home #section_02 .testimonials .description {
+        text-align: center;
+        margin-top: 2em; }
+        #home #section_02 .testimonials .description .highlight {
+          font-family: 'Graphie-Regular', sans-serif;
+          font-size: 1.5rem; }
+          @media screen and (min-width: 992px) {
+            #home #section_02 .testimonials .description .highlight {
+              font-size: 2rem; } }
+        #home #section_02 .testimonials .description span {
+          font-family: 'Graphie-Book', sans-serif;
+          font-size: 1.3rem;
+          display: block; }
+          @media screen and (min-width: 992px) {
+            #home #section_02 .testimonials .description span {
+              font-size: 1.6rem; } }
   #home #section_03 {
     padding: 6rem 0; }
     #home #section_03 #highlight {

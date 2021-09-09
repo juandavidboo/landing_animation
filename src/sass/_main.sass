@@ -1,5 +1,6 @@
-// FONTS
-
+@font-face 
+	font-family: "Graphie-Book"
+	src: url("../fonts/Graphie-Book.otf") format('opentype')
 @font-face 
 	font-family: "Graphie-Regular"
 	src: url("../fonts/Graphie-Regular.otf") format('opentype')
@@ -12,6 +13,33 @@
 @font-face 
 	font-family: "Graphie-ExtraBold"
 	src: url("../fonts/Graphie-ExtraBold.otf") format('opentype')
+
+//@font-face
+//	font-family:"graphie-book"
+//	src:url("https://dafonttop.com/wp-data/g/584/8584/file/Graphie-Book.otf") format("woff"),
+//	url("https://dafonttop.com/wp-data/g/584/8584/file/Graphie-Book.otf") format("opentype"),
+//	url("https://dafonttop.com/wp-data/g/584/8584/file/Graphie-Book.otf") format("truetype")
+//@font-face
+//	font-family:"graphie-regular"
+//	src:url("https://dafonttop.com/wp-data/g/584/8584/file/Graphie-Regular.otf") format("woff"),
+//	url("https://dafonttop.com/wp-data/g/584/8584/file/Graphie-Regular.otf") format("opentype"),
+//	url("https://dafonttop.com/wp-data/g/584/8584/file/Graphie-Regular.otf") format("truetype")
+//@font-face
+//	font-family:"graphie-semibold"
+//	src:url("https://dafonttop.com/wp-data/g/584/8584/file/Graphie-SemiBold.otf") format("woff"),
+//	url("https://dafonttop.com/wp-data/g/584/8584/file/Graphie-SemiBold.otf") format("opentype"),
+//	url("https://dafonttop.com/wp-data/g/584/8584/file/Graphie-SemiBold.otf") format("truetype")
+//@font-face
+//	font-family:"graphie-bold"
+//	src:url("https://dafonttop.com/wp-data/g/584/8584/file/Graphie-Bold.otf") format("woff"),
+//	url("https://dafonttop.com/wp-data/g/584/8584/file/Graphie-Bold.otf") format("opentype"),
+//	url("https://dafonttop.com/wp-data/g/584/8584/file/Graphie-Bold.otf") format("truetype")
+//@font-face
+//	font-family:"graphie-extrabold"
+//	src:url("https://dafonttop.com/wp-data/g/584/8584/file/Graphie-ExtraBold.otf") format("woff"),
+//	url("https://dafonttop.com/wp-data/g/584/8584/file/Graphie-ExtraBold.otf") format("opentype"),
+//	url("https://dafonttop.com/wp-data/g/584/8584/file/Graphie-ExtraBold.otf") format("truetype")
+
 
 
 html
@@ -251,6 +279,7 @@ footer
 				.case_logo
 					width: 50%
 				.copy
+					font-family: 'Graphie-Book', sans-serif
 					font-size: 1.5rem
 					margin-top: 2em
 					@media screen and ( min-width: $lg )
@@ -284,10 +313,27 @@ footer
 				display: none
 		.testimonials
 			padding-top: 6rem
-			img
+			.active
+			.pic_holder
+
+			.pic
 				padding: 0 3rem
 				width: 100%
 				max-width: 400px
+			.description
+				text-align: center
+				margin-top: 2em
+				.highlight
+					font-family: 'Graphie-Regular', sans-serif
+					font-size: 1.5rem
+					@media screen and ( min-width: $lg )
+						font-size: 2rem
+				span
+					font-family: 'Graphie-Book', sans-serif
+					font-size: 1.3rem
+					display: block
+					@media screen and ( min-width: $lg )
+						font-size: 1.6rem
 
 
 
