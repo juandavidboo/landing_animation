@@ -22,3 +22,32 @@
 }());
 
 // Place any jQuery/helper plugins in here.
+
+AOS.init({
+  startEvent: 'DOMContentLoaded',
+  throttleDelay: 99
+});
+
+window.addEventListener("load", function(){
+
+  var tl = new gsap.timeline({onComplete:function(){tl.play("start")}});
+
+  tl.defaultEase = Power1.easeInOut;
+  tl.delay(0.5)
+    .add("start")
+    .to(".ptext_01", 0.5, {top:'50%'}, "-=0.5")
+    .to(".ptext_01", 0.5, {top:'-150%'}, "+=1")
+    .to(".ptext_02", 0.5, {top:'50%'}, "-=0.5")
+    .to(".ptext_02", 0.5, {top:'-150%'}, "+=1")
+    .to(".ptext_03", 0.5, {top:'50%'}, "-=0.5")
+    .to(".ptext_03", 0.5, {top:'-150%'}, "+=1")
+    .to(".ptext_04", 0.5, {top:'50%'}, "-=0.5")
+    .to(".ptext_04", 0.5, {top:'-150%'}, "+=1")
+    .to(".ptext_05", 0.5, {top:'50%'}, "-=0.5")
+    .to(".ptext_05", 0.5, {top:'-150%'}, "+=1")
+    .to(".ptext_06", 0.5, {top:'50%'}, "-=0.5")
+    .to(".ptext_06", 0.5, {top:'-150%'}, "+=1")
+  
+ });
+
+

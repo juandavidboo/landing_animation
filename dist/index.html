@@ -21,167 +21,10 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/custom.css">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 	<meta name="theme-color" content="#fafafa">
 </head>
-
-<style>
-	.blobs {
-   width: 280px;
-   height: 280px;
-   margin: 0 auto;
-   position: absolute;
-   left: 50%;
-   top: 50%;
-   margin-left: -150px;
-   margin-top: -150px;
-   border-radius: 100%;
-   -webkit-animation: myturn linear 16s infinite;
-   -moz-animation: myturn linear 16s infinite;
-   animation: myturn linear 16s infinite;
-   /*&:after {
-     content: '';
-     height: 10px;
-     width: 10px;
-     border-radius: 50%;
-     background: #334455;
-     position: relative;
-     display: block;
-   }
-  &:before {
-     content: '';
-     height: 10px;
-     width: 10px;
-     border-radius: 50%;
-     background: #112222;
-     position: absolute;
-      margin-top: -60px;
-     display: block;
-      -webkit-animation: littleOrbit linear 5s infinite;
-     -moz-animation: littleOrbit linear 5s infinite;
-     animation: littleOrbit linear 5s infinite;
-   }*/
- }
- 
- .blob {
-   position: absolute;
-   background: #557788;
- }
- 
- .blob:nth-child(1) {
-   top: -10px;
-   left: -10px;
-   width: 250px;
-   height: 260px;
-   background: #557788;
-   border-radius: 100%;
-   -webkit-animation: mytopdown linear 3s infinite;
-   -moz-animation: mytopdown linear 3s infinite;
-   animation: mytopdown linear 3s infinite;
- }
- 
- .blob:nth-child(2) {
-   top: 10px;
-   left: 10px;
-   background: #557788;
-   width: 250px;
-   height: 260px;
-   border-radius: 100%;
-   -webkit-animation: mytopleft linear 3s infinite;
-   -moz-animation: mytopleft linear 3s infinite;
-   animation: mytopleft linear 3s infinite;
- }
- 
- .blob:nth-child(3) {
-   top: 10px;
-   left: -10px;
-   background: #557788;
-   width: 250px;
-   height: 260px;
-   border-radius: 100%;
-   -webkit-animation: mytopright linear 3s infinite;
-   -moz-animation: mytopright linear 3s infinite;
-   animation: mytopright linear 3s infinite;
- }
- 
-
- /* Mozila + Chrome */
- 
-/*@keyframes littleOrbit {
-    0% {
-     top: 10px;
-      opacity: 1;
-     transform: rotate(0deg) scale(1);
-   }
-
-     50% {
-   box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-     top: -10px;
-       opacity: 0.3;
-     transform: rotate(180deg) scale(1.5);
-   }
-
-   100% {
-    top: 10px;
-       opacity: 1;
-     transform: rotate(360deg) scale(1);
-   }
-}*/
-
- @keyframes mytopdown {
-   0% {
-     top: 0px;
-     transform: rotate(0deg) scale(1);
-   }
-   50% {
-     top: 10px;
-     transform: rotate(180deg) scale(1.04);
-   }
-   100% {
-     top: 0px;
-     transform: rotate(360deg) scale(1);
-   }
- }
- 
- @keyframes mytopleft {
-   0% {
-     top: 0px;
-     transform: rotate(0deg) scale(1.05);
-   }
-   50% {
-     top: 10px;
-     transform: rotate(180deg) scale(1);
-   }
-   100% {
-     top: 0px;
-     transform: rotate(360deg) scale(1.05);
-   }
- }
- 
- @keyframes mytopright {
-   0% {
-     top: -10px;
-     transform: rotate(0deg) scale(1);
-   }
-   50% {
-     top: 0px;
-     transform: rotate(180deg) scale(1.02);
-   }
-   100% {
-     top: -10px;
-     transform: rotate(360deg) scale();
-   }
- }
- 
- @-webkit-keyframes myturn {
-   0% {
-     -webkit-transform: rotate(0deg) skewX(0deg);
-   }
-   100% {
-     -webkit-transform: rotate(-360deg) skewX(0deg);
-   }
- }
-</style>
 
 <body>
 
@@ -204,18 +47,26 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<section id="intro" class="col-12 col-lg-7">
-					<h1 class="h1">Level up your growth strategy</h1>
-					<h2 class="h2">We are the digital agency of choice for businesses who want to scale their&nbsp;<div class="pill_wrap"><div class="pill"><div class="text_wrap"><span>online&nbsp;strategy</span><span>revenue</span><span>growth</span><span>performance</span><span>sales</span><span>value</span></div></div></div></h2>
+					<h1 class="h1"
+					data-aos="fade-down"
+					data-aos-delay="300">Level up your growth strategy</h1>
+					<h2 class="h2"
+					data-aos="fade-up"
+					data-aos-delay="600">We are the digital agency of choice for businesses who want to scale their&nbsp;<div class="pill_wrap"
+					data-aos="fade-up"
+					data-aos-delay="800"><div class="pill"><div class="text_wrap"><span class="ptext_01">online&nbsp;strategy</span><span class="ptext_02">revenue</span><span class="ptext_03">growth</span><span class="ptext_04">performance</span><span class="ptext_05">sales</span><span class="ptext_06">value</span></div></div></div></h2>
 				</section>
 				<section id="contact" class="col-12 col-lg-5">
 					<div class="row justify-content-center bkg-container">
 						<div id="" class="z-index col-lg-6">
-							<!--<div class="blobs">
-								<div class="blob"></div>
-								<div class="blob"></div>
-								<div class="blob"></div>
-							</div>-->
-							<h3 class="h3 circle_bkg"><span>Ready,</span> <br class="--mobile_hide"><span>Steady,</span> <br class="--mobile_hide"><span>GROW!</span></h3>
+							
+							<h3 class="h3 circle_bkg"><span>Ready,</span> <br class="--mobile_hide"><span>Steady,</span> <br class="--mobile_hide"><span>GROW!</span>
+								<div class="blobs">
+									<div class="blob"></div>
+									<div class="blob"></div>
+									<div class="blob"></div>
+								</div>
+							</h3>
 							<form id="">
 								<div class="input_wrap mb-3">
 									<label for="InputEmail" class="form-label">your name</label>
@@ -362,20 +213,23 @@
 				</div>
 			</div>
 			<section class="testimonials row  g-5 align-items-center">
-				<div class="col col-md-4 active">
+				<div class="col-12 col-md-6 col-lg-3">
 					<div class="pic_holder">
 						<div class="comment">
 							This is my personal opinion on the epic work made by the Epica team
 						</div>
-						<img class="pic" src="img/testimonial_01_softlight_rojo.jpg">
+						<img class="pic" src="img/testimonial_01_softlight.jpg">
 					</div>
 					<div class="description">
 						<span class="highlight">Juan Ballardini</span>
 						<span>Un cargo</span>
 					</div>
 				</div>
-				<div class="col col-md-4">
+				<div class="col-12 col-md-6 col-lg-3">
 					<div class="pic_holder">
+						<div class="comment">
+							This is my personal opinion on the epic work made by the Epica team
+						</div>
 						<img class="pic" src="img/testimonial_01_lightercolor.jpg">
 					</div>
 					<div class="description">
@@ -383,9 +237,24 @@
 						<span>Otro cargo</span>
 					</div>
 				</div>
-				<div class="col col-md-4">
+				<div class="col-12 col-md-6 col-lg-3">
 					<div class="pic_holder">
+						<div class="comment">
+							This is my personal opinion on the epic work made by the Epica team
+						</div>
 						<img class="pic" src="img/testimonial_01_softlight.jpg">
+					</div>
+					<div class="description">
+						<span class="highlight">Juan Ballardini 3</span>
+						<span>Otro cargo</span>
+					</div>
+				</div>
+				<div class="col-12 col-md-6 col-lg-3">
+					<div class="pic_holder">
+						<div class="comment">
+							This is my personal opinion on the epic work made by the Epica team
+						</div>
+						<img class="pic" src="img/testimonial_01_lightercolor.jpg">
 					</div>
 					<div class="description">
 						<span class="highlight">Juan Ballardini 3</span>
@@ -439,6 +308,9 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 	<script src="js/vendor/modernizr-3.11.2.min.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+
 	<script src="js/plugins.js"></script>
 	<script src="js/main.js"></script>
 

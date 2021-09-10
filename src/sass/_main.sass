@@ -146,10 +146,6 @@ footer
 			span
 				display: block
 				font-size: 0.615em//2.5rem | 1em = 52px
-				@media screen and ( min-width: $xl )
-					//font-size: 2.75rem
-				@media screen and ( min-width: $xxl )
-					//font-size: 3.2rem
 			.pill_wrap
 				display: inline-block
 				vertical-align: bottom
@@ -174,14 +170,19 @@ footer
 					//padding-top: 0.1em
 					width: 4.25em //1em = 52px 
 					height: 1em //1em = 52px
-					position: relative 
+					position: relative
+					overflow: hidden
 					span
 						color: $red
 						position: absolute
 						left: 50%
-						top: 50%
+						top: 150%
 						transform: translate(-50%, -50%)
 						z-index: 1
+					.ptext_05
+						font-size: 0.75em
+					.ptext_06
+						font-size: 1em
 	// CONTACT SECTION
 
 	#contact
@@ -201,19 +202,19 @@ footer
 				font-size: 3.6rem
 			@media screen and ( min-width: $xxl )
 				font-size: 4.2rem
-		.circle_bkg::before
-			content: ''
-			background-color: $yellow
-			height: 20vw
-			width: 20vw
-			border-radius: 50%
-			left: 50%
-			top: 50%
-			position: absolute
-			transform: translate(-50%, -50%)
-			z-index: -1
-			@media (max-width: $lg)
-				display: none
+		//.circle_bkg::before
+		//	content: ''
+		//	background-color: $violet
+		//	height: 20vw
+		//	width: 20vw
+		//	border-radius: 50%
+		//	left: 50%
+		//	top: 50%
+		//	position: absolute
+		//	transform: translate(-50%, -50%)
+		//	z-index: -1
+		//	@media (max-width: $lg)
+		//		display: none
 		.z-index
 			z-index: 0
 		form
@@ -246,6 +247,94 @@ footer
 					font-size: 2.6rem
 				&:hover
 					background-color: $color1
+
+	.blobs
+		width: 21vw//280px
+		height: 21vw//280px
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-45%, -45%)
+		z-index: -1
+		border-radius: 100%
+		//-webkit-animation: myturn linear 16s infinite
+		//-moz-animation: myturn linear 16s infinite
+		//animation: myturn linear 16s infinite
+
+	.blob
+		position: absolute
+
+	.blob:nth-child(1)
+		top: -3.6% //10px
+		left: -3.6% //10px
+		width: 89% //250px
+		height: 93% //260px
+		background: $yellow
+		border-radius: 100%
+		-webkit-animation: mytopdown linear 3s infinite
+		-moz-animation: mytopdown linear 3s infinite
+		animation: mytopdown linear 3s infinite
+
+	.blob:nth-child(2)
+		top: 3.6% //10px
+		left: 3.6% //10px
+		background: $yellow
+		width: 89% //250px
+		height: 93% //260px
+		border-radius: 100%
+		-webkit-animation: mytopleft linear 3s infinite
+		-moz-animation: mytopleft linear 3s infinite
+		animation: mytopleft linear 3s infinite
+
+	.blob:nth-child(3)
+		top: 3.6% //10px
+		left: -3.6% //10px
+		background: $yellow
+		width: 89% //250px
+		height: 93% //260px
+		border-radius: 100%
+		-webkit-animation: mytopright linear 3s infinite
+		-moz-animation: mytopright linear 3s infinite
+		animation: mytopright linear 3s infinite
+	
+	@keyframes mytopdown
+		0%
+			top: 0px
+			transform: rotate(0deg) scale(1)
+		50%
+			top: 10px
+			transform: rotate(180deg) scale(1.04)
+		100%
+			top: 0px
+			transform: rotate(360deg) scale(1)
+
+	@keyframes mytopleft
+		0%
+			top: 0px
+			transform: rotate(0deg) scale(1.05)
+		50%
+			top: 10px
+			transform: rotate(180deg) scale(1)
+		100%
+			top: 0px
+			transform: rotate(360deg) scale(1.05)
+
+	@keyframes mytopright
+		0%
+			top: -10px
+			transform: rotate(0deg) scale(1)
+		50%
+			top: 0px
+			transform: rotate(180deg) scale(1.02)
+		100%
+			top: -10px
+			transform: rotate(360deg) scale()
+
+	@keyframes myturn
+		0%
+			transform: rotate(0deg) skewX(0deg)
+		100%
+			transform: rotate(-360deg) skewX(0deg)
 
 	// SECTION 01 - EPIC STORIES
 
@@ -313,27 +402,49 @@ footer
 				display: none
 		.testimonials
 			padding-top: 6rem
-			.active
 			.pic_holder
-
-			.pic
-				padding: 0 3rem
+				padding: 0 2em
+				text-align: center
+				position: relative
+				&:hover
+					cursor: pointer
+					.pic
+						filter: brightness(0.25)
+						animation: filter 2s ease-in
+					.comment
+						opacity: 100
+						animation: opacity 1s
+			.comment
 				width: 100%
-				max-width: 400px
+				max-width: 300px
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				z-index: 1
+				opacity: 0
+				padding: 0 3em
+				font-size: 1.2rem
+				color: $white
+			.pic
+				width: 100%
+				max-width: 300px
+				border-radius: 16em
+				filter: brightness(1)
 			.description
 				text-align: center
 				margin-top: 2em
 				.highlight
 					font-family: 'Graphie-Regular', sans-serif
-					font-size: 1.5rem
-					@media screen and ( min-width: $lg )
-						font-size: 2rem
-				span
-					font-family: 'Graphie-Book', sans-serif
-					font-size: 1.3rem
-					display: block
+					font-size: 1.4rem
 					@media screen and ( min-width: $lg )
 						font-size: 1.6rem
+				span
+					font-family: 'Graphie-Book', sans-serif
+					font-size: 1.2rem
+					display: block
+					@media screen and ( min-width: $lg )
+						font-size: 1.4rem
 
 
 
