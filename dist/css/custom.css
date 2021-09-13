@@ -1,35 +1,35 @@
 @font-face {
-  font-family: "Graphie-Book";
+  font-family: "graphie-book";
   src: url("../fonts/Graphie-Book.otf") format("opentype"); }
 
 @font-face {
-  font-family: "Graphie-Regular";
-  src: url("../fonts/Graphie-Regular.otf") format("opentype"); }
+  font-family: "graphie-regular";
+  src: url("../fonts/graphie-regular.otf") format("opentype"); }
 
 @font-face {
-  font-family: "Graphie-SemiBold";
+  font-family: "graphie-semibold";
   src: url("../fonts/Graphie-SemiBold.otf") format("opentype"); }
 
 @font-face {
-  font-family: "Graphie-Bold";
+  font-family: "graphie-bold";
   src: url("../fonts/Graphie-Bold.otf") format("opentype"); }
 
 @font-face {
-  font-family: "Graphie-ExtraBold";
+  font-family: "graphie-extrabold";
   src: url("../fonts/Graphie-ExtraBold.otf") format("opentype"); }
 
 html {
   font-size: 62.5%; }
 
 body {
-  font-family: 'Graphie-Regular', sans-serif;
+  font-family: 'graphie-regular', sans-serif;
   color: #EEEEEE;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased; }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: 'Graphie-ExtraBold', sans-serif;
+  font-family: 'graphie-extrabold', sans-serif;
   color: white;
   margin: 0; }
 
@@ -120,7 +120,7 @@ footer {
         text-align: center;
         width: 100%;
         position: relative; }
-        #home #intro .h2 .pill::before {
+        #home #intro .h2 .pill:before {
           content: '';
           background-color: white;
           height: 1em;
@@ -130,6 +130,7 @@ footer {
           top: 0;
           position: absolute;
           transform: translate(0%, 0%);
+          opacity: 0;
           z-index: 1; }
         #home #intro .h2 .pill .text_wrap {
           margin-left: 10%;
@@ -144,9 +145,9 @@ footer {
             top: 150%;
             transform: translate(-50%, -50%);
             z-index: 1; }
-          #home #intro .h2 .pill .text_wrap .ptext_05 {
+          #home #intro .h2 .pill .text_wrap .pill_text_05 {
             font-size: 0.75em; }
-          #home #intro .h2 .pill .text_wrap .ptext_06 {
+          #home #intro .h2 .pill .text_wrap .pill_text_06 {
             font-size: 1em; }
   #home #contact {
     padding: 6rem 0;
@@ -156,7 +157,7 @@ footer {
         padding: 0 0 6rem 0;
         background-color: unset; } }
     @media screen and (max-width: 992px) {
-      #home #contact::before {
+      #home #contact:before {
         content: ''; } }
     #home #contact .h3 {
       position: relative;
@@ -170,26 +171,27 @@ footer {
           font-size: 4.2rem; } }
     #home #contact .z-index {
       z-index: 0; }
-    #home #contact form {
+    #home #contact #contact_form {
+      display: none;
       text-align: center; }
       @media screen and (min-width: 992px) {
-        #home #contact form .input_wrap {
+        #home #contact #contact_form .input_wrap {
           text-align: center; } }
-      #home #contact form label {
-        font-family: 'Graphie-Bold', sans-serif;
+      #home #contact #contact_form label {
+        font-family: 'graphie-bold', sans-serif;
         color: #333333;
         font-size: 1.4rem; }
         @media screen and (min-width: 1200px) {
-          #home #contact form label {
+          #home #contact #contact_form label {
             font-size: 1.8rem; } }
-      #home #contact form input,
-      #home #contact form textarea {
+      #home #contact #contact_form input,
+      #home #contact #contact_form textarea {
         font-size: 1.6rem;
         background-color: transparent;
         border: none;
         border-bottom: #333333 solid 1px; }
-      #home #contact form button {
-        font-family: 'Graphie-Bold', sans-serif;
+      #home #contact #contact_form button {
+        font-family: 'graphie-bold', sans-serif;
         font-size: 2.2rem;
         text-transform: lowercase;
         margin-top: 1rem;
@@ -198,9 +200,9 @@ footer {
         border-color: #1E084B;
         padding: .2rem 2rem; }
         @media screen and (min-width: 992px) {
-          #home #contact form button {
+          #home #contact #contact_form button {
             font-size: 2.6rem; } }
-        #home #contact form button:hover {
+        #home #contact #contact_form button:hover {
           background-color: #521E48; }
   #home .blobs {
     width: 21vw;
@@ -310,7 +312,7 @@ footer {
       #home #section_01 .case .description .case_logo {
         width: 50%; }
       #home #section_01 .case .description .copy {
-        font-family: 'Graphie-Book', sans-serif;
+        font-family: 'graphie-book', sans-serif;
         font-size: 1.5rem;
         margin-top: 2em; }
         @media screen and (min-width: 992px) {
@@ -350,11 +352,9 @@ footer {
         #home #section_02 .testimonials .pic_holder:hover {
           cursor: pointer; }
           #home #section_02 .testimonials .pic_holder:hover .pic {
-            filter: brightness(0.25);
-            animation: filter 2s ease-in; }
+            filter: brightness(0.25); }
           #home #section_02 .testimonials .pic_holder:hover .comment {
-            opacity: 100;
-            animation: opacity 1s; }
+            opacity: 100; }
       #home #section_02 .testimonials .comment {
         width: 100%;
         max-width: 300px;
@@ -365,24 +365,26 @@ footer {
         z-index: 1;
         opacity: 0;
         padding: 0 3em;
-        font-size: 1.2rem;
-        color: #EEEEEE; }
+        font-size: 1.4rem;
+        color: #EEEEEE;
+        transition: all 500ms ease-out; }
       #home #section_02 .testimonials .pic {
         width: 100%;
         max-width: 300px;
         border-radius: 16em;
-        filter: brightness(1); }
+        filter: brightness(1);
+        transition: all 500ms ease-out; }
       #home #section_02 .testimonials .description {
         text-align: center;
         margin-top: 2em; }
         #home #section_02 .testimonials .description .highlight {
-          font-family: 'Graphie-Regular', sans-serif;
+          font-family: 'graphie-regular', sans-serif;
           font-size: 1.4rem; }
           @media screen and (min-width: 992px) {
             #home #section_02 .testimonials .description .highlight {
               font-size: 1.6rem; } }
         #home #section_02 .testimonials .description span {
-          font-family: 'Graphie-Book', sans-serif;
+          font-family: 'graphie-book', sans-serif;
           font-size: 1.2rem;
           display: block; }
           @media screen and (min-width: 992px) {
