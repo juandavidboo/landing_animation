@@ -83,6 +83,13 @@ footer {
 
 #home {
   padding: 0; }
+  #home #hero {
+    padding: 0 0 6rem 0;
+    min-height: calc(100vh - 126px); }
+    #home #hero > .container {
+      min-height: calc(100vh - 126px); }
+      #home #hero > .container > .row {
+        min-height: calc(100vh - 126px); }
   #home #intro {
     padding: 6rem 0; }
     #home #intro .h1 {
@@ -116,15 +123,14 @@ footer {
         display: inline-block;
         vertical-align: bottom;
         padding-right: 0.9em; }
-      #home #intro .h2 .pill {
+      #home #intro .h2 .pill_position {
         text-align: center;
         width: 100%;
         position: relative; }
-        #home #intro .h2 .pill:before {
-          content: '';
-          background-color: white;
+        #home #intro .h2 .pill_position .pill {
+          background-color: #fff;
           height: 1em;
-          width: 120%;
+          width: 1em;
           border-radius: 24px;
           left: 0;
           top: 0;
@@ -132,35 +138,36 @@ footer {
           transform: translate(0%, 0%);
           opacity: 0;
           z-index: 1; }
-        #home #intro .h2 .pill .text_wrap {
+        #home #intro .h2 .pill_position .text_wrap {
           margin-left: 10%;
           width: 4.25em;
           height: 1em;
           position: relative;
           overflow: hidden; }
-          #home #intro .h2 .pill .text_wrap span {
+          #home #intro .h2 .pill_position .text_wrap span {
             color: #E41408;
             position: absolute;
             left: 50%;
             top: 150%;
             transform: translate(-50%, -50%);
             z-index: 1; }
-          #home #intro .h2 .pill .text_wrap .pill_text_05 {
+          #home #intro .h2 .pill_position .text_wrap .pill_text_05 {
             font-size: 0.75em; }
-          #home #intro .h2 .pill .text_wrap .pill_text_06 {
+          #home #intro .h2 .pill_position .text_wrap .pill_text_06 {
             font-size: 1em; }
   #home #contact {
     padding: 6rem 0;
-    position: relative; }
+    position: relative;
+    overflow: hidden; }
     @media screen and (min-width: 992px) {
       #home #contact {
-        padding: 0 0 6rem 0;
-        background-color: unset; } }
+        padding: 0;
+        background-color: unset;
+        overflow: unset; } }
     @media screen and (max-width: 992px) {
       #home #contact:before {
         content: ''; } }
     #home #contact .h3 {
-      position: relative;
       font-size: 3.2rem;
       text-align: center; }
       @media screen and (min-width: 1200px) {
@@ -169,11 +176,17 @@ footer {
       @media screen and (min-width: 1400px) {
         #home #contact .h3 {
           font-size: 4.2rem; } }
+      #home #contact .h3 .grow_text_01,
+      #home #contact .h3 .grow_text_02,
+      #home #contact .h3 .grow_text_03 {
+        opacity: 0; }
     #home #contact .z-index {
-      z-index: 0; }
+      z-index: 0;
+      position: relative; }
     #home #contact #contact_form {
       display: none;
-      text-align: center; }
+      text-align: center;
+      height: 1px; }
       @media screen and (min-width: 992px) {
         #home #contact #contact_form .input_wrap {
           text-align: center; } }
@@ -205,16 +218,26 @@ footer {
         #home #contact #contact_form button:hover {
           background-color: #521E48; }
   #home .blobs {
-    width: 21vw;
-    height: 21vw;
+    width: 80%;
+    padding-bottom: 80%;
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-45%, -45%);
+    transform: translate(-50%, -50%);
     z-index: -1;
     border-radius: 100%; }
   #home .blob {
     position: absolute; }
+  #home .blob_bkg {
+    background-color: #F8A30E;
+    height: 84%;
+    width: 84%;
+    border-radius: 10em;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    opacity: 1; }
   #home .blob:nth-child(1) {
     top: -3.6%;
     left: -3.6%;
@@ -222,9 +245,9 @@ footer {
     height: 93%;
     background: #F8A30E;
     border-radius: 100%;
-    -webkit-animation: mytopdown linear 3s infinite;
-    -moz-animation: mytopdown linear 3s infinite;
-    animation: mytopdown linear 3s infinite; }
+    -webkit-animation: mytopdown linear 2s infinite;
+    -moz-animation: mytopdown linear 2s infinite;
+    animation: mytopdown linear 2s infinite; }
   #home .blob:nth-child(2) {
     top: 3.6%;
     left: 3.6%;
@@ -232,19 +255,19 @@ footer {
     width: 89%;
     height: 93%;
     border-radius: 100%;
-    -webkit-animation: mytopleft linear 3s infinite;
-    -moz-animation: mytopleft linear 3s infinite;
-    animation: mytopleft linear 3s infinite; }
+    -webkit-animation: mytopleft linear 2s infinite;
+    -moz-animation: mytopleft linear 2s infinite;
+    animation: mytopleft linear 2s infinite; }
   #home .blob:nth-child(3) {
-    top: 3.6%;
-    left: -3.6%;
+    top: -3.6%;
+    left: 3.6%;
     background: #F8A30E;
     width: 89%;
     height: 93%;
     border-radius: 100%;
-    -webkit-animation: mytopright linear 3s infinite;
-    -moz-animation: mytopright linear 3s infinite;
-    animation: mytopright linear 3s infinite; }
+    -webkit-animation: mytopright linear 2s infinite;
+    -moz-animation: mytopright linear 2s infinite;
+    animation: mytopright linear 2s infinite; }
 
 @keyframes mytopdown {
   0% {
@@ -356,6 +379,7 @@ footer {
           #home #section_02 .testimonials .pic_holder:hover .comment {
             opacity: 100; }
       #home #section_02 .testimonials .comment {
+        font-family: 'graphie-book', sans-serif;
         width: 100%;
         max-width: 300px;
         position: absolute;
