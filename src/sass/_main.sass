@@ -60,9 +60,9 @@ p
 	margin: 1em 0
 
 .container
-	padding: 0 2.5rem
+/*	padding: 0 3rem
 	@media screen and ( min-width: $lg )
-		padding: 0
+		padding: 0*/
 
 // HEADER & FOOTER
 
@@ -111,8 +111,6 @@ footer
 	@media (max-width: $lg)
 		display: none
 
-.container
-
 
 // LANDING PAGE
 
@@ -122,19 +120,24 @@ footer
 	// HERO SECTION
 
 	#hero
-		padding: 0 0 6rem 0
+		padding-bottom: 6rem
 		min-height: calc(100vh - 126px)
+		@media screen and ( max-width: $md )
+			overflow: hidden
+			padding-bottom: 0
 		> .container
 			min-height: calc(100vh - 126px)
 			> .row
 				min-height: calc(100vh - 126px)
 			
 	#intro
-		padding: 6rem 0
+		padding-bottom: 6rem
+		padding-top: 6rem
 		.h1
 			font-size: 6rem
 			line-height: 1.1em
 			margin-bottom: 0.4em
+			opacity: 0
 			@media screen and ( min-width: $lg )
 				font-size: 6.25rem
 			@media screen and ( min-width: $xl )
@@ -143,6 +146,7 @@ footer
 				font-size: 8.75rem
 		.h2
 			font-size: 3.4rem
+			opacity: 0
 			@media screen and ( min-width: $lg )
 				font-size: 3.6rem
 			@media screen and ( min-width: $xl )
@@ -191,20 +195,30 @@ footer
 	// CONTACT SECTION
 
 	#contact
-		padding: 6rem 0
+		padding-bottom: 6rem
+		padding-top: 6rem
 		position: relative
-		//overflow: hidden
+		@media screen and ( max-width: $xs )
+			//overflow: hidden
 		@media screen and ( min-width: $lg )
 			padding: 0
 			background-color: unset
 			overflow: unset
 		&:before
-			@media screen and ( max-width: $lg )
+			@media screen and ( max-width: $md )
 				content: ''
+				background-color: $yellow
+				position: absolute
+				width: 200%
+				height: 100%
+				margin-left: -50%
+				top: 0
 		.h3
-			//position: relative
 			font-size: 3.2rem
 			text-align: center
+			margin-bottom: 1em
+			@media screen and ( min-width: $md )
+				margin-bottom: 0
 			@media screen and ( min-width: $xl )
 				font-size: 3.6rem
 			@media screen and ( min-width: $xxl )
@@ -213,36 +227,30 @@ footer
 			.grow_text_02,
 			.grow_text_03
 				opacity: 0
-				//color: $gray-4
-		//.circle_bkg:before
-		//	content: ''
-		//	background-color: $violet
-		//	height: 20vw
-		//	width: 20vw
-		//	border-radius: 50%
-		//	left: 50%
-		//	top: 50%
-		//	position: absolute
-		//	transform: translate(-50%, -50%)
-		//	z-index: -1
-		//	@media (max-width: $lg)
-		//		display: none
+				color: #111
 		.z-index
 			z-index: 0
 			position: relative
+			@media screen and ( max-width: $xs )
+				padding: 0 //to remove row>* in mobile
 		#contact_form
 			display: none
 			text-align: center
 			height: 1px
+			opacity: 0
+			@media screen and ( max-width: $md )
+				display: block
+				height: auto
 			.input_wrap
+				text-align: left
 				@media screen and ( min-width: $lg )
 					text-align: center
 			label
 				font-family: 'graphie-bold', sans-serif
 				color: $gray-1
-				font-size: 1.4rem
+				font-size: 1.4em
 				@media screen and ( min-width: $xl )
-					font-size: 1.8rem
+					font-size: 1.8em
 			input,
 			textarea
 				font-size: 1.6rem
@@ -278,6 +286,8 @@ footer
 		//-webkit-animation: myturn linear 16s infinite
 		//-moz-animation: myturn linear 16s infinite
 		//animation: myturn linear 16s infinite
+		@media screen and ( max-width: $md )
+			display: none
 
 	.blob
 		position: absolute
@@ -371,7 +381,8 @@ footer
 	// SECTION 01 - EPIC STORIES
 
 	#section_01
-		padding: 6rem 0
+		padding-bottom: 6rem
+		padding-top: 6rem
 		.h1
 			font-size: 4rem
 			@media screen and ( min-width: $lg )
@@ -399,6 +410,7 @@ footer
 				padding-top: 6rem
 				.case_logo
 					width: 50%
+					max-height: 100px
 				.copy
 					font-family: 'graphie-book', sans-serif
 					font-size: 1.5rem
@@ -420,7 +432,8 @@ footer
 	// SECTION 02 - TESTIMONIALS
 
 	#section_02
-		padding: 6rem 0
+		padding-bottom: 6rem
+		padding-top: 6rem
 		.h1
 			font-size: 4rem
 			@media screen and ( min-width: $lg )
@@ -430,6 +443,7 @@ footer
 			@media screen and ( min-width: $xxl )
 				font-size: 6.5rem
 		.h2
+			font-weight: normal
 			span
 				display: none
 		.testimonials
@@ -480,11 +494,11 @@ footer
 						font-size: 1.4rem
 
 
-
 	// SECTION 03 - PARTNERS
 
 	#section_03
-		padding: 6rem 0
+		padding-bottom: 6rem
+		padding-top: 6rem
 		#brands
 		#highlight
 			padding: 3rem 4rem

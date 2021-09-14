@@ -36,12 +36,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 p {
   margin: 1em 0; }
 
-.container {
-  padding: 0 2.5rem; }
-  @media screen and (min-width: 992px) {
-    .container {
-      padding: 0; } }
-
+/*	padding: 0 3rem
+	@media screen and ( min-width: $lg )
+		padding: 0*/
 header {
   padding: 2rem 0; }
   header .navbar .navbar-brand img {
@@ -84,18 +81,24 @@ footer {
 #home {
   padding: 0; }
   #home #hero {
-    padding: 0 0 6rem 0;
+    padding-bottom: 6rem;
     min-height: calc(100vh - 126px); }
+    @media screen and (max-width: 768px) {
+      #home #hero {
+        overflow: hidden;
+        padding-bottom: 0; } }
     #home #hero > .container {
       min-height: calc(100vh - 126px); }
       #home #hero > .container > .row {
         min-height: calc(100vh - 126px); }
   #home #intro {
-    padding: 6rem 0; }
+    padding-bottom: 6rem;
+    padding-top: 6rem; }
     #home #intro .h1 {
       font-size: 6rem;
       line-height: 1.1em;
-      margin-bottom: 0.4em; }
+      margin-bottom: 0.4em;
+      opacity: 0; }
       @media screen and (min-width: 992px) {
         #home #intro .h1 {
           font-size: 6.25rem; } }
@@ -106,7 +109,8 @@ footer {
         #home #intro .h1 {
           font-size: 8.75rem; } }
     #home #intro .h2 {
-      font-size: 3.4rem; }
+      font-size: 3.4rem;
+      opacity: 0; }
       @media screen and (min-width: 992px) {
         #home #intro .h2 {
           font-size: 3.6rem; } }
@@ -156,19 +160,30 @@ footer {
           #home #intro .h2 .pill_position .text_wrap .pill_text_06 {
             font-size: 1em; }
   #home #contact {
-    padding: 6rem 0;
+    padding-bottom: 6rem;
+    padding-top: 6rem;
     position: relative; }
     @media screen and (min-width: 992px) {
       #home #contact {
         padding: 0;
         background-color: unset;
         overflow: unset; } }
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 768px) {
       #home #contact:before {
-        content: ''; } }
+        content: '';
+        background-color: #F8A30E;
+        position: absolute;
+        width: 200%;
+        height: 100%;
+        margin-left: -50%;
+        top: 0; } }
     #home #contact .h3 {
       font-size: 3.2rem;
-      text-align: center; }
+      text-align: center;
+      margin-bottom: 1em; }
+      @media screen and (min-width: 768px) {
+        #home #contact .h3 {
+          margin-bottom: 0; } }
       @media screen and (min-width: 1200px) {
         #home #contact .h3 {
           font-size: 3.6rem; } }
@@ -178,24 +193,35 @@ footer {
       #home #contact .h3 .grow_text_01,
       #home #contact .h3 .grow_text_02,
       #home #contact .h3 .grow_text_03 {
-        opacity: 0; }
+        opacity: 0;
+        color: #111; }
     #home #contact .z-index {
       z-index: 0;
       position: relative; }
+      @media screen and (max-width: 576px) {
+        #home #contact .z-index {
+          padding: 0; } }
     #home #contact #contact_form {
       display: none;
       text-align: center;
-      height: 1px; }
-      @media screen and (min-width: 992px) {
-        #home #contact #contact_form .input_wrap {
-          text-align: center; } }
+      height: 1px;
+      opacity: 0; }
+      @media screen and (max-width: 768px) {
+        #home #contact #contact_form {
+          display: block;
+          height: auto; } }
+      #home #contact #contact_form .input_wrap {
+        text-align: left; }
+        @media screen and (min-width: 992px) {
+          #home #contact #contact_form .input_wrap {
+            text-align: center; } }
       #home #contact #contact_form label {
         font-family: 'graphie-bold', sans-serif;
         color: #333333;
-        font-size: 1.4rem; }
+        font-size: 1.4em; }
         @media screen and (min-width: 1200px) {
           #home #contact #contact_form label {
-            font-size: 1.8rem; } }
+            font-size: 1.8em; } }
       #home #contact #contact_form input,
       #home #contact #contact_form textarea {
         font-size: 1.6rem;
@@ -225,6 +251,9 @@ footer {
     transform: translate(-50%, -50%);
     z-index: -1;
     border-radius: 100%; }
+    @media screen and (max-width: 768px) {
+      #home .blobs {
+        display: none; } }
   #home .blob {
     position: absolute; }
   #home .blob_bkg {
@@ -307,7 +336,8 @@ footer {
   100% {
     transform: rotate(-360deg) skewX(0deg); } }
   #home #section_01 {
-    padding: 6rem 0; }
+    padding-bottom: 6rem;
+    padding-top: 6rem; }
     #home #section_01 .h1 {
       font-size: 4rem; }
       @media screen and (min-width: 992px) {
@@ -332,7 +362,8 @@ footer {
     #home #section_01 .case .description {
       padding-top: 6rem; }
       #home #section_01 .case .description .case_logo {
-        width: 50%; }
+        width: 50%;
+        max-height: 100px; }
       #home #section_01 .case .description .copy {
         font-family: 'graphie-book', sans-serif;
         font-size: 1.5rem;
@@ -351,7 +382,8 @@ footer {
           background-color: #F8A30E;
           color: black; }
   #home #section_02 {
-    padding: 6rem 0; }
+    padding-bottom: 6rem;
+    padding-top: 6rem; }
     #home #section_02 .h1 {
       font-size: 4rem; }
       @media screen and (min-width: 992px) {
@@ -363,8 +395,10 @@ footer {
       @media screen and (min-width: 1400px) {
         #home #section_02 .h1 {
           font-size: 6.5rem; } }
-    #home #section_02 .h2 span {
-      display: none; }
+    #home #section_02 .h2 {
+      font-weight: normal; }
+      #home #section_02 .h2 span {
+        display: none; }
     #home #section_02 .testimonials {
       padding-top: 6rem; }
       #home #section_02 .testimonials .pic_holder {
@@ -414,7 +448,8 @@ footer {
             #home #section_02 .testimonials .description span {
               font-size: 1.4rem; } }
   #home #section_03 {
-    padding: 6rem 0; }
+    padding-bottom: 6rem;
+    padding-top: 6rem; }
     #home #section_03 #highlight {
       padding: 3rem 4rem; }
       @media screen and (min-width: 992px) {

@@ -102,44 +102,74 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
     function grow_texts() {
+
       var tl = new gsap.timeline({repeat:0});
-  
-      tl.delay(0)
-        .to(".grow_text_01", 1.2, {opacity:1})
-        .to(".grow_text_02", 1.2, {opacity:1}, "-=0.75")
-        .to(".grow_text_03", 1.2, {opacity:1}, "-=0.75")
-        .to(".blobs", 3, {width:'125%', paddingBottom:'125%'}, "-=0.75")
-        .to(".grow_text_01", 0.5, {opacity:0})
-        .to(".blob_bkg", 2.5, {width: '100%', height: '100%'}, "-=0.5")
-        .to(".grow_text_02", 0.5, {opacity:0})
-        .to(".blob_01", 0.5, {top: '5%', left: '5%'})
-        .to(".grow_text_03", 0.5, {opacity:0})
-        .to(".blob_02", 1, {top: '8%', left: '5%'})
-        .to(".blob_03", 0.5, {top: '5%', left: '5%'})
-        .to(".blob_01", 0, {display: 'none'})
-        .to(".blob_02", 0, {display: 'none'})
-        .to(".blob_03", 0, {display: 'none'})
-        .to(".grow_text_01", 0, {display:'none'})
-        .to(".grow_text_02", 0, {display:'none'})
-        .to(".grow_text_03", 0, {display:'none'})
-        .to(".grow_text", 0, {lineHeight:0})
-        .to("#contact_form", 0, {display:'block'})
-        .to("#contact_form", 0, {height:'auto'})
-        .to(".blobs", 0.75, {height: '120%'})
-
-
+      
+      if(window.innerWidth >= 768){
+        tl.delay(0)
+          .to(".grow_text_01", 1, {opacity:1})
+          .to(".grow_text_02", 1, {opacity:1}, "-=0.75")
+          .to(".grow_text_03", 1, {opacity:1}, "-=0.75", "grow_t")
+          .to(".blobs", 1.75, {width:'130%', paddingBottom:'130%'}, "grow_t-=0.75")
+          .to(".blobs", 0.5, {width:'125%', paddingBottom:'125%'})
+          .to(".grow_text_01", 0.5, {opacity:0}, "-=0")
+          .to(".grow_text_02", 0.5, {opacity:0}, "-=0")
+          .to(".grow_text_03", 0.5, {opacity:0}, "-=0")
+          .to(".grow_text_01", 0, {display:'none'})
+          .to(".grow_text_02", 0, {display:'none'})
+          .to(".grow_text_03", 0, {display:'none'})
+          .to(".grow_text", 0, {lineHeight:0})
+          .to(".blob_bkg", 1, {width: '100%', height: '100%'}, "-=1")
+          .to("#contact_form", 0, {display:'block'})
+          .to("#contact_form", 0, {height:'auto'})
+          .to(".blob_bkg", 0.5, {height: '220%'})
+          //.to(".blobs", 0.5, {height: '120%'})
+          .to(".blob_01", 0.5, {top: '5%', left: '5%'}, "-=0.5")
+          .to(".blob_02", 0.5, {top: '8%', left: '5%'}, "-=0.5")
+          .to(".blob_03", 0.5, {top: '5%', left: '5%'}, "-=0.5")
+          .to("#contact_form", 0.5, {opacity:1}, "-=0.5")
+          
+          /*.to(".blob_01", 0, {display: 'none'})
+          .to(".blob_02", 0, {display: 'none'})
+          .to(".blob_03", 0, {display: 'none'})*/
+      } else {
+        tl.delay(0)
+          .to(".grow_text_01", 1, {opacity:1})
+          .to(".grow_text_02", 1, {opacity:1}, "-=0.75")
+          .to(".grow_text_03", 1, {opacity:1}, "-=0.75")
+          .to("#contact_form", 0.5, {opacity:1})
+      }
+      
       return tl;
     }
 
-    
-
     var master = gsap.timeline();
     master.defaultEase = Power1.easeInOut;
-      
+    
     master.addLabel("start")
           .add(pill())
           .add(pill_texts())
-          .add(grow_texts())
+          
+    master.add(grow_texts({
+      // yes, we can add it to an entire timeline!
+      scrollTrigger: {
+        trigger: "#contact",
+        pin: true,   // pin the trigger element while active
+        start: "top top", // when the top of the trigger hits the top of the viewport
+        end: "bottom", // end after scrolling 500px beyond the start
+        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        snap: {
+          //snapTo: "labels", // snap to the closest label in the timeline
+          //duration: {min: 0.2, max: 3}, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
+          //delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
+          ease: "power1.inOut" // the ease of the snap animation ("power3" by default)
+        }
+      }
+    }));
+
+
+
+    
           
 
 
