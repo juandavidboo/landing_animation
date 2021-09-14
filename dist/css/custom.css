@@ -157,8 +157,7 @@ footer {
             font-size: 1em; }
   #home #contact {
     padding: 6rem 0;
-    position: relative;
-    overflow: hidden; }
+    position: relative; }
     @media screen and (min-width: 992px) {
       #home #contact {
         padding: 0;
