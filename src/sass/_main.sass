@@ -89,7 +89,6 @@ footer
 			margin: 0
 
 
-
 // HELPERS
 
 .--red
@@ -228,9 +227,10 @@ footer
 			.grow_text_03
 				opacity: 0
 				color: #111
-		.z-index
+		.grow-contact_wrapper
 			z-index: 0
 			position: relative
+			opacity: 0
 			@media screen and ( max-width: $xs )
 				padding: 0 //to remove row>* in mobile
 		#contact_form
@@ -392,6 +392,7 @@ footer
 			@media screen and ( min-width: $xxl )
 				font-size: 6.5rem
 		.h2
+			line-height: 100px
 			span
 				display: none
 		.cases
@@ -405,12 +406,15 @@ footer
 				.case_anim
 					padding-top: 6rem
 					width: 100%
-					max-width: 440px
+					max-width: 360px
 			.description
 				padding-top: 6rem
 				.case_logo
 					width: 50%
 					max-height: 100px
+					vertical-align: middle
+					@media screen and ( min-width: $md )
+						width: 25%
 				.copy
 					font-family: 'graphie-book', sans-serif
 					font-size: 1.5rem

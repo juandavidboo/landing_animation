@@ -195,11 +195,12 @@ footer {
       #home #contact .h3 .grow_text_03 {
         opacity: 0;
         color: #111; }
-    #home #contact .z-index {
+    #home #contact .grow-contact_wrapper {
       z-index: 0;
-      position: relative; }
+      position: relative;
+      opacity: 0; }
       @media screen and (max-width: 576px) {
-        #home #contact .z-index {
+        #home #contact .grow-contact_wrapper {
           padding: 0; } }
     #home #contact #contact_form {
       display: none;
@@ -349,8 +350,10 @@ footer {
       @media screen and (min-width: 1400px) {
         #home #section_01 .h1 {
           font-size: 6.5rem; } }
-    #home #section_01 .h2 span {
-      display: none; }
+    #home #section_01 .h2 {
+      line-height: 100px; }
+      #home #section_01 .h2 span {
+        display: none; }
     #home #section_01 .cases #carouselIndicators .carousel-indicators {
       margin-bottom: -6rem; }
     #home #section_01 .cases #carouselIndicators .carousel-control-next, #home #section_01 .cases #carouselIndicators .carousel-control-prev {
@@ -358,12 +361,16 @@ footer {
     #home #section_01 .case .animation .case_anim {
       padding-top: 6rem;
       width: 100%;
-      max-width: 440px; }
+      max-width: 360px; }
     #home #section_01 .case .description {
       padding-top: 6rem; }
       #home #section_01 .case .description .case_logo {
         width: 50%;
-        max-height: 100px; }
+        max-height: 100px;
+        vertical-align: middle; }
+        @media screen and (min-width: 768px) {
+          #home #section_01 .case .description .case_logo {
+            width: 25%; } }
       #home #section_01 .case .description .copy {
         font-family: 'graphie-book', sans-serif;
         font-size: 1.5rem;
