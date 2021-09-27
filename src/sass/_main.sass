@@ -56,6 +56,21 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
 	color: white
 	margin: 0
 
+.h1
+	.pill_o_wrap
+		position: relative
+		.pill_o
+			background-color: $orange
+			display: block
+			height: 0.5em
+			width: 1em  // to 120%
+			border-radius: 1em
+			left: 0
+			bottom: 0
+			position: absolute
+			opacity: 0 // to 1
+			z-index: -1
+
 p
 	margin: 1em 0
 
@@ -251,6 +266,9 @@ footer
 				font-size: 1.4em
 				@media screen and ( min-width: $xl )
 					font-size: 1.8em
+			input
+				@media screen and ( min-width: $md )
+					text-align: center
 			input,
 			textarea
 				font-size: 1.6rem

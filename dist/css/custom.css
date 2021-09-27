@@ -33,6 +33,20 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: white;
   margin: 0; }
 
+.h1 .pill_o_wrap {
+  position: relative; }
+  .h1 .pill_o_wrap .pill_o {
+    background-color: #F77F11;
+    display: block;
+    height: 0.5em;
+    width: 1em;
+    border-radius: 1em;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    opacity: 0;
+    z-index: -1; }
+
 p {
   margin: 1em 0; }
 
@@ -223,6 +237,9 @@ footer {
         @media screen and (min-width: 1200px) {
           #home #contact #contact_form label {
             font-size: 1.8em; } }
+      @media screen and (min-width: 768px) {
+        #home #contact #contact_form input {
+          text-align: center; } }
       #home #contact #contact_form input,
       #home #contact #contact_form textarea {
         font-size: 1.6rem;

@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
   
   // wait until external stylesheets, links, images, and other external assets are loaded in the window
+  // loading content on viewport
   window.addEventListener("load", function(){
 
     function animateFrom(elem, direction) {
@@ -107,14 +108,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
       
       if(window.innerWidth >= 768){
         tl.delay(0)
+          //.to(".grow_text_01", 1, {opacity:1})
+          //.to(".grow_text_02", 1, {opacity:1}, "-=0.75")
+          //.to(".grow_text_03", 1, {opacity:1}, "-=0.75", "grow_t")
+          //.to(".blobs", 1.75, {width:'130%', paddingBottom:'130%'}, "grow_t-=0.75")
+          //.to(".blobs", 0.5, {width:'125%', paddingBottom:'125%'})
+          .to(".blobs", 1.75, {width:'130%', paddingBottom:'130%'}, "-=0.75")
+          .to(".blobs", 0.5, {width:'125%', paddingBottom:'125%'})
           .to(".grow_text_01", 1, {opacity:1})
           .to(".grow_text_02", 1, {opacity:1}, "-=0.75")
-          .to(".grow_text_03", 1, {opacity:1}, "-=0.75", "grow_t")
-          .to(".blobs", 1.75, {width:'130%', paddingBottom:'130%'}, "grow_t-=0.75")
-          .to(".blobs", 0.5, {width:'125%', paddingBottom:'125%'})
-          .to(".grow_text_01", 0.5, {opacity:0}, "-=0")
-          .to(".grow_text_02", 0.5, {opacity:0}, "-=0")
-          .to(".grow_text_03", 0.5, {opacity:0}, "-=0")
+          .to(".grow_text_03", 1, {opacity:1}, "-=0.75")
+          .to(".grow_text_01", 0.25, {opacity:0}, "-=0")
+          .to(".grow_text_02", 0.25, {opacity:0}, "-=0")
+          .to(".grow_text_03", 0.25, {opacity:0}, "-=0")
           .to(".grow_text_01", 0, {display:'none'})
           .to(".grow_text_02", 0, {display:'none'})
           .to(".grow_text_03", 0, {display:'none'})
@@ -143,6 +149,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
       return tl;
     }
 
+    function pill_orange() {
+      var tl = new gsap.timeline({repeat:-1});
+  
+      tl.delay(0)
+        .to(".pill_o", 0, {opacity:1})
+        //.to(".pill_o", 0.3, {left:'100%'}, "+=0.2")
+        //.to(".pill_o", 0.3, {left:0})
+      return tl;
+    }
+
     var master = gsap.timeline();
     master.defaultEase = Power1.easeInOut;
     
@@ -150,29 +166,41 @@ document.addEventListener("DOMContentLoaded", function(event) {
           .add(pill())
           .add(pill_texts())
           
-    master.add(grow_texts({
-      // yes, we can add it to an entire timeline!
-      scrollTrigger: {
-        trigger: "#contact",
-        pin: true,   // pin the trigger element while active
-        start: "top top", // when the top of the trigger hits the top of the viewport
-        end: "bottom", // end after scrolling 500px beyond the start
-        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-        snap: {
-          //snapTo: "labels", // snap to the closest label in the timeline
-          //duration: {min: 0.2, max: 3}, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
-          //delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
-          ease: "power1.inOut" // the ease of the snap animation ("power3" by default)
-        }
-      }
-    }));
+          .add(grow_texts({
+            // yes, we can add it to an entire timeline!
+            scrollTrigger: {
+              trigger: "#contact",
+              pin: true,   // pin the trigger element while active
+              start: "top top", // when the top of the trigger hits the top of the viewport
+              end: "bottom", // end after scrolling 500px beyond the start
+              scrub: 0.5, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+              snap: {
+                //snapTo: "labels", // snap to the closest label in the timeline
+                //duration: {min: 0.2, max: 3}, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
+                //delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
+                ease: "power1.inOut" // the ease of the snap animation ("power3" by default)
+              }
+            }
+          }), "start")
+
+          .add(pill_orange({
+            // yes, we can add it to an entire timeline!
+            scrollTrigger: {
+              trigger: "#section_01",
+              pin: true,   // pin the trigger element while active
+              start: "top top", // when the top of the trigger hits the top of the viewport
+              end: "bottom", // end after scrolling 500px beyond the start
+              scrub: 0.5, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+              snap: {
+                //snapTo: "labels", // snap to the closest label in the timeline
+                //duration: {min: 0.2, max: 3}, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
+                //delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
+                ease: "power1.inOut" // the ease of the snap animation ("power3" by default)
+              }
+            }
+          }));
 
 
   }, false);
   
 });
-
-
-
-
-
