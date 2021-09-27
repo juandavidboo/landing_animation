@@ -75,8 +75,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     function pill() {
       var tl = new gsap.timeline();
   
-      tl.delay(0)
-        .to(".pill", 0, {opacity:1})
+      tl.to(".pill", 0, {opacity:1})
         .to(".pill", 0.3, {left:'100%'}, "+=0.2")
         .to(".pill", 0.3, {left:0})
         .to(".pill", 0.3, {width:'120%'})
@@ -86,8 +85,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     function pill_texts() {
       var tl = new gsap.timeline({repeat:-1});
   
-      tl.delay(0)
-        .to(".pill_text_01", 0.5, {top:'50%'}, "-=0.5")
+      tl.to(".pill_text_01", 0.5, {top:'50%'}, "-=0.5")
         .to(".pill_text_01", 0.5, {top:'-150%'}, "+=0.75")
         .to(".pill_text_02", 0.5, {top:'50%'}, "-=0.5")
         .to(".pill_text_02", 0.5, {top:'-150%'}, "+=0.75")
@@ -128,19 +126,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
           .to(".blob_bkg", 1, {width: '100%', height: '100%'}, "-=1")
           .to("#contact_form", 0, {display:'block'})
           .to("#contact_form", 0, {height:'auto'})
-          .to(".blob_bkg", 0.5, {height: '220%'})
+          .to(".blob_bkg", 1, {height: '220%', ease: Elastic.easeOut.config( 1, 0.5)})
           //.to(".blobs", 0.5, {height: '120%'})
-          .to(".blob_01", 0.5, {top: '5%', left: '5%'}, "-=0.5")
-          .to(".blob_02", 0.5, {top: '8%', left: '5%'}, "-=0.5")
-          .to(".blob_03", 0.5, {top: '5%', left: '5%'}, "-=0.5")
+          .to(".blob_01", 0.5, {top: '5%', left: '5%'}, "-=1.5")
+          .to(".blob_02", 0.5, {top: '8%', left: '5%'}, "-=1")
+          .to(".blob_03", 0.5, {top: '5%', left: '5%'}, "-=1")
           .to("#contact_form", 0.5, {opacity:1}, "-=0.5")
           
           /*.to(".blob_01", 0, {display: 'none'})
           .to(".blob_02", 0, {display: 'none'})
           .to(".blob_03", 0, {display: 'none'})*/
       } else {
-        tl.delay(0)
-          .to(".grow_text_01", 1, {opacity:1})
+        tl.to(".grow_text_01", 1, {opacity:1})
           .to(".grow_text_02", 1, {opacity:1}, "-=0.75")
           .to(".grow_text_03", 1, {opacity:1}, "-=0.75")
           .to("#contact_form", 0.5, {opacity:1})
@@ -152,8 +149,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     function pill_orange() {
       var tl = new gsap.timeline({repeat:-1});
   
-      tl.delay(0)
-        .to(".pill_o", 0, {opacity:1})
+      tl.to(".pill_o", 0, {opacity:1})
         //.to(".pill_o", 0.3, {left:'100%'}, "+=0.2")
         //.to(".pill_o", 0.3, {left:0})
       return tl;
@@ -178,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 //snapTo: "labels", // snap to the closest label in the timeline
                 //duration: {min: 0.2, max: 3}, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
                 //delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
-                ease: "power1.inOut" // the ease of the snap animation ("power3" by default)
+                ease: "elastic.easeOut" // the ease of the snap animation ("power3" by default)
               }
             }
           }), "start")
