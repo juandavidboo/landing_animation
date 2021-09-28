@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     master.defaultEase = Power1.easeInOut;
     
     master.addLabel("start")
-          .add(pill())
+          .add(pill(), "start")
           .add(pill_texts())
           
           .add(grow_texts({
