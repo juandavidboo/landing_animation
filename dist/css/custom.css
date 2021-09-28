@@ -174,29 +174,26 @@ footer {
           #home #intro .h2 .pill_position .text_wrap .pill_text_06 {
             font-size: 1em; }
   #home #contact {
-    padding-bottom: 6rem;
     padding-top: 6rem;
-    position: relative; }
+    padding-bottom: 6rem;
+    position: relative;
+    overflow: hidden; }
+    @media screen and (min-width: 768px) {
+      #home #contact {
+        padding-top: 12rem;
+        padding-bottom: 12rem;
+        overflow: unset; } }
     @media screen and (min-width: 992px) {
       #home #contact {
         padding: 0;
         background-color: unset;
         overflow: unset; } }
-    @media screen and (max-width: 768px) {
-      #home #contact:before {
-        content: '';
-        background-color: #F8A30E;
-        position: absolute;
-        width: 200%;
-        height: 100%;
-        margin-left: -50%;
-        top: 0; } }
     #home #contact .h3 {
       font-size: 3.2rem;
-      text-align: center;
       margin-bottom: 1em; }
       @media screen and (min-width: 768px) {
         #home #contact .h3 {
+          text-align: center;
           margin-bottom: 0; } }
       @media screen and (min-width: 1200px) {
         #home #contact .h3 {
@@ -208,19 +205,15 @@ footer {
       #home #contact .h3 .grow_text_02,
       #home #contact .h3 .grow_text_03 {
         opacity: 0;
-        color: #111; }
+        color: #222; }
     #home #contact .grow-contact_wrapper {
       z-index: 0;
       position: relative;
       opacity: 0; }
-      @media screen and (max-width: 576px) {
-        #home #contact .grow-contact_wrapper {
-          padding: 0; } }
     #home #contact #contact_form {
       display: none;
       text-align: center;
-      height: 1px;
-      opacity: 0; }
+      height: 1px; }
       @media screen and (max-width: 768px) {
         #home #contact #contact_form {
           display: block;
@@ -230,23 +223,30 @@ footer {
         @media screen and (min-width: 992px) {
           #home #contact #contact_form .input_wrap {
             text-align: center; } }
-      #home #contact #contact_form label {
+      #home #contact #contact_form .f1,
+      #home #contact #contact_form .f2,
+      #home #contact #contact_form .f3,
+      #home #contact #contact_form .f4,
+      #home #contact #contact_form .f5 {
+        opacity: 0; }
+      #home #contact #contact_form .form-label {
         font-family: 'graphie-bold', sans-serif;
         color: #333333;
         font-size: 1.4em; }
         @media screen and (min-width: 1200px) {
-          #home #contact #contact_form label {
+          #home #contact #contact_form .form-label {
             font-size: 1.8em; } }
-      @media screen and (min-width: 768px) {
-        #home #contact #contact_form input {
-          text-align: center; } }
-      #home #contact #contact_form input,
-      #home #contact #contact_form textarea {
+      #home #contact #contact_form .form-control {
         font-size: 1.6rem;
         background-color: transparent;
         border: none;
         border-bottom: #333333 solid 1px; }
-      #home #contact #contact_form button {
+      @media screen and (min-width: 768px) {
+        #home #contact #contact_form input {
+          text-align: center; } }
+      #home #contact #contact_form textarea {
+        resize: none; }
+      #home #contact #contact_form .btn {
         font-family: 'graphie-bold', sans-serif;
         font-size: 2.2rem;
         text-transform: lowercase;
@@ -256,10 +256,23 @@ footer {
         border-color: #1E084B;
         padding: .2rem 2rem; }
         @media screen and (min-width: 992px) {
-          #home #contact #contact_form button {
+          #home #contact #contact_form .btn {
             font-size: 2.6rem; } }
-        #home #contact #contact_form button:hover {
+        #home #contact #contact_form .btn:hover {
           background-color: #521E48; }
+  #home .mobile_blob_bkg {
+    background-color: #F8A30E;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1; }
+    @media screen and (min-width: 768px) {
+      #home .mobile_blob_bkg {
+        display: none; } }
   #home .blobs {
     width: 80%;
     padding-bottom: 80%;
@@ -278,7 +291,7 @@ footer {
     background-color: #F8A30E;
     height: 84%;
     width: 84%;
-    border-radius: 10em;
+    border-radius: 20em;
     left: 50%;
     top: 50%;
     position: absolute;

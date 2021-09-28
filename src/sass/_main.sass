@@ -206,32 +206,27 @@ footer
 						font-size: 0.75em
 					.pill_text_06
 						font-size: 1em
+
 	// CONTACT SECTION
 
 	#contact
-		padding-bottom: 6rem
 		padding-top: 6rem
+		padding-bottom: 6rem
 		position: relative
-		@media screen and ( max-width: $xs )
-			//overflow: hidden
+		overflow: hidden
+		@media screen and ( min-width: $md )
+			padding-top: 12rem
+			padding-bottom: 12rem
+			overflow: unset
 		@media screen and ( min-width: $lg )
 			padding: 0
 			background-color: unset
 			overflow: unset
-		&:before
-			@media screen and ( max-width: $md )
-				content: ''
-				background-color: $yellow
-				position: absolute
-				width: 200%
-				height: 100%
-				margin-left: -50%
-				top: 0
 		.h3
 			font-size: 3.2rem
-			text-align: center
 			margin-bottom: 1em
 			@media screen and ( min-width: $md )
+				text-align: center
 				margin-bottom: 0
 			@media screen and ( min-width: $xl )
 				font-size: 3.6rem
@@ -241,18 +236,17 @@ footer
 			.grow_text_02,
 			.grow_text_03
 				opacity: 0
-				color: #111
+				color: #222
 		.grow-contact_wrapper
 			z-index: 0
 			position: relative
 			opacity: 0
-			@media screen and ( max-width: $xs )
-				padding: 0 //to remove row>* in mobile
+			//@media screen and ( max-width: $xs )
+				//padding: 0 to remove row>* in mobile
 		#contact_form
 			display: none
 			text-align: center
 			height: 1px
-			opacity: 0
 			@media screen and ( max-width: $md )
 				display: block
 				height: auto
@@ -260,22 +254,29 @@ footer
 				text-align: left
 				@media screen and ( min-width: $lg )
 					text-align: center
-			label
+			.f1,
+			.f2,
+			.f3,
+			.f4,
+			.f5,
+				opacity: 0
+			.form-label
 				font-family: 'graphie-bold', sans-serif
 				color: $gray-1
 				font-size: 1.4em
 				@media screen and ( min-width: $xl )
 					font-size: 1.8em
-			input
-				@media screen and ( min-width: $md )
-					text-align: center
-			input,
-			textarea
+			.form-control
 				font-size: 1.6rem
 				background-color: transparent
 				border: none
 				border-bottom: $gray-1 solid 1px
-			button
+			input
+				@media screen and ( min-width: $md )
+					text-align: center
+			textarea
+				resize: none
+			.btn
 				font-family: 'graphie-bold', sans-serif
 				font-size: 2.2rem
 				text-transform: lowercase
@@ -288,7 +289,22 @@ footer
 					font-size: 2.6rem
 				&:hover
 					background-color: $color1
-
+	.mobile_blob_bkg
+		background-color: $yellow
+		position: absolute
+		//width: 200%
+		//height: 100%
+		//margin-left: -50%
+		//top: 0
+		width: 150px
+		height: 150px
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		border-radius: 50%
+		z-index: -1
+		@media screen and ( min-width: $md )
+			display: none
 	.blobs
 		width: 80%//21vw 280px to 130%
 		padding-bottom: 80% // to 130%
@@ -313,7 +329,7 @@ footer
 		background-color: $yellow
 		height: 84%
 		width: 84%
-		border-radius: 10em
+		border-radius: 20em
 		left: 50%
 		top: 50%
 		position: absolute
