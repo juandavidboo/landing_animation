@@ -31,8 +31,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // loading content on viewport
   window.addEventListener("load", function(){
 
+    //function to determin scroll direction/animation for .gs_reveal
     function animateFrom(elem, direction) {
-      console.log(elem)
+      //console.log(elem)
       direction = direction || 1;
       var x = 0,
           y = direction * 100;
@@ -60,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       gsap.set(elem, {autoAlpha: 0});
     }
     
+    //Array to assign animateFrom() function
     gsap.utils.toArray(".gs_reveal").forEach(function(elem) {
       hide(elem); // assure that the element is hidden when scrolled into view
       
@@ -72,13 +74,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
       
     });
 
+    //sequenced animations for same time loading elements
     ScrollTrigger.batch(".batch", {
       start: "top bottom-=25px",
       onEnter: batch => gsap.to(batch, {duration: 0.30, opacity: 1, y: 0, stagger: 0.15}),
       onLeaveBack:batch => gsap.to(batch, {opacity: 0, y: 100, stagger: 0.1})
     });
 
-//Hero section animations
+    //Hero section animation
 
     function pill() {
       var tl = new gsap.timeline();
@@ -164,6 +167,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       return tl;
     }
 
+    //section_01 Section_03 orange pills
+
     function pill_orange() {
       var tl = new gsap.timeline({repeat:-1});
   
@@ -173,6 +178,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
       return tl;
     }
 
+    //gsap.utils.toArray(".pill_o_wrap").forEach(elem => {
+    //  let hover = gsap.to(".pill_o", {left: "70%", backgroundColor: "#F8A30E", duration: 0.5, paused: true, ease: Back.easeInOut.config(2)});
+    //  elem.addEventListener("mouseenter", () => hover.play());
+    //  elem.addEventListener("mouseleave", () => hover.reverse());
+    //});
+
+    let pill_o1 = document.querySelector(".hover_01"),
+      hover_01 = gsap.to(".pill_o_01", {left: "70%", backgroundColor: "#F8A30E", duration: 0.5, paused: true, ease: Back.easeInOut.config(2)});
+  
+      pill_o1.addEventListener("mouseenter", () => hover_01.play());
+      pill_o1.addEventListener("mouseleave", () => hover_01.reverse());
+    
+    let pill_o2 = document.querySelector(".hover_02"),
+      hover_02 = gsap.to(".pill_o_02", {left: "70%", backgroundColor: "#F8A30E", duration: 0.5, paused: true, ease: Back.easeInOut.config(2)});
+  
+      pill_o2.addEventListener("mouseenter", () => hover_02.play());
+      pill_o2.addEventListener("mouseleave", () => hover_02.reverse());
+
+    //MASTER timeline
     var master = gsap.timeline();
     master.defaultEase = Power1.easeInOut;
     
@@ -181,34 +205,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
           .add(pill_texts())
           
           .add(grow_texts({
-            // yes, we can add it to an entire timeline!
             scrollTrigger: {
               trigger: "#contact",
               pin: true,   // pin the trigger element while active
               start: "top top", // when the top of the trigger hits the top of the viewport
               end: "bottom", // end after scrolling 500px beyond the start
               scrub: 0.5, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-              snap: {
-                //snapTo: "labels", // snap to the closest label in the timeline
-                //duration: {min: 0.2, max: 3}, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
-                //delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
-              }
             }
           }), "start")
 
           .add(pill_orange({
-            // yes, we can add it to an entire timeline!
             scrollTrigger: {
               trigger: "#section_01",
-              pin: true,   // pin the trigger element while active
-              start: "top top", // when the top of the trigger hits the top of the viewport
-              end: "bottom", // end after scrolling 500px beyond the start
+              pin: true,
+              start: "top top",
+              end: "bottom",
               scrub: 0.5, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
               snap: {
-                //snapTo: "labels", // snap to the closest label in the timeline
-                //duration: {min: 0.2, max: 3}, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
-                //delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
-                ease: "power1.inOut" // the ease of the snap animation ("power3" by default)
+                
+                ease: "power1.inOut" 
               }
             }
           }));
