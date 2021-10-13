@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           //.to(".grow_text_03", 1, {opacity:1}, "-=0.75", "grow_t")
           //.to(".blobs", 1.75, {width:'130%', paddingBottom:'130%'}, "grow_t-=0.75")
           //.to(".blobs", 0.5, {width:'125%', paddingBottom:'125%'})
-          .to(".blobs", 1.25, {width:'130%', paddingBottom:'130%'}, "-=0.75")
+          .to(".blobs", 0.75, {width:'130%', paddingBottom:'130%'})
           .to(".blobs", 0.5, {width:'125%', paddingBottom:'125%'})
           .to(".grow_text_01", 1, {opacity:1})
           .to(".grow_text_02", 1, {opacity:1}, "-=0.75")
